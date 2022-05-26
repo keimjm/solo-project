@@ -1,1 +1,12 @@
 /* TODO Add site wide styles */
+
+.nav-menu {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 10px;
+    list-style: none;
+    text-align: center;
+    width: 70vw;
+    
+    
+}
