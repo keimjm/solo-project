@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import Home from './Home.js'
 
 function App() {
   const dispatch = useDispatch();
@@ -13,8 +14,10 @@ function App() {
   }, [dispatch]);
 
   return (
-    <>
-      <Navigation isLoaded={isLoaded} />
+    <div className="app">
+    <Navigation isLoaded={isLoaded} />
+    <Home /> 
+      
       {isLoaded && (
         <Switch>
           <Route path="/signup">
@@ -22,7 +25,7 @@ function App() {
           </Route>
         </Switch>
       )}
-    </>
+    </div>
   );
 }
 
