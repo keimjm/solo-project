@@ -41,11 +41,29 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <nav class="nav-menu">
-    <NavLink class="nav-menu-home" exact to="/"><i class="fa-brands fa-airbnb"></i></NavLink>
-    <button class="nav-menu-profile" onClick={openMenu}>
-      <i class="fa-solid fa-user"></i>
+    <div class="navigation">
+      <NavLink class="nav-menu-home" exact to="/">
+       <img
+         className='icon' 
+         src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/2560px-Airbnb_Logo_B%C3%A9lo.svg.png'
+         alt=""
+       />
+      </NavLink>
+    <div className='nav-center'>
+      <input type="text" className='search-bar'/>
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <div className='nav-right'>
+      <p>Become a Host</p>
+      <i class="fa-solid fa-globe"></i>
+      <button class="nav-menu-profile" onClick={openMenu}>
+        <i class="fa-solid fa-grip-lines fa-sm"></i>
+        <i class="fa-solid fa-user "></i>
       </button>
+    </div>
+
+    
       {showMenu && (
       <ul>
         <li>
@@ -53,7 +71,7 @@ function Navigation({ isLoaded }){
         </li>
       </ul>
       )}
-    </nav>
+    </div>
   );
 }
 

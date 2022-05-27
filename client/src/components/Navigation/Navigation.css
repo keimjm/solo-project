@@ -1,4 +1,83 @@
 .nav-menu-profile {
-    width: 50px;
-    
+    /* float: right; */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    background-color: white;
+    /* grid-area: 'c';
+    margin-right: 25px; */
+}
+
+.icon {
+    object-fit: contain;
+    height: 50px;
+    margin-left: 20px;
+    margin-top: 15px;
+
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+    top: 0;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 15px;
+}
+
+.nav-center {
+    display: flex;
+    border-radius: 30px;
+    border: 1px solid lightgray;
+
+    align-items: center;
+    flex: 1;
+    padding: 10px;
+    margin: 5px;
+    justify-content: center;
+    max-width: fit-content;
+}
+
+.nav-right {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+    margin-right: 50px;
+}
+
+.search-bar {
+    margin-right: 5px;
+    border: none;
+}
+
+.search-bar:focus {
+    outline: none;
+}
+
+.nav-right > p,
+.fa-globe
+{
+    margin-right: 15px;
+}
+
+.fa-magnifying-glass {
+    background-color: red;
+    color: white;
+    border-radius: 30px;
+    padding: 7px;
+}
+
+.fa-user {
+    padding-left: 5px;
 }

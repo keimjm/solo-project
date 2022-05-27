@@ -1,12 +1,31 @@
 /* TODO Add site wide styles */
 
 .nav-menu {
-    display: grid;
+    display: inline;
     grid-template-columns: repeat(3, auto);
     grid-gap: 10px;
     list-style: none;
     text-align: center;
     width: 70vw;
+    grid-template-areas: 'a' 'b' 'c';
     
-    
+}
+
+.fa-airbnb {
+    margin-top: 10px;
+    color: red;
+    margin-left: 20px;
+}
+
+.nav-menu-home {
+    color: red;
+    text-decoration: none;
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+i.fa-brands.fa-airbnb {
+    height: 100px;
+    width: 60px;
 }

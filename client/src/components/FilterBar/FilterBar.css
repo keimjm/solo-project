@@ -1,0 +1,39 @@
+.filter-bar-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filter-block {
+    position: unset;
+    margin: 55px;
+
+}
+
+.filter-icon-button {
+    background-color: unset;
+    border: unset;
+}
+
+
+.filter-icon {
+    display: block;
+    margin: 0 auto;
+}
+
+.filter-name {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+.filter-button {
+    border: 1px solid lightgray;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
