@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       Room.hasMany(models.Reservation, {
         foreignKey: "room_id",
         as: "amenity",
+        onDelete: "CASCADE",hooks:true
       });
       Room.belongsTo(models.Location, {
         foreignKey: "location_id",
@@ -20,15 +21,17 @@ module.exports = (sequelize, DataTypes) => {
       Room.hasMany(models.Amenity, {
         foreignKey: "room_id",
         as: "amenity",
+        onDelete: "CASCADE",hooks:true
       });
       Room.hasMany(models.Favorite, {
         foreignKey: "room_id",
         as: "favorite",
+        onDelete: "CASCADE",hooks:true
       });
     }
     
   }
-  Favorite.init({
+  Room.init({
     house_type: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -68,6 +71,23 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Room',
   });
+
+  Room.addRoom = async function (user, location, fields  ) {
+    const {house_type, description, total_occupancy, total_bedrooms, total_bathrooms, price, file_name} = fields;
+    const room = await Room.create({
+      house_type,
+      description,
+      total_occupancy,
+      total_bedrooms,
+      total_bathrooms,
+      price,
+      owner_id: user.id,
+      location_id: location.id,
+      file_name
+    });
+    await room.save();
+    return room;
+  };
 
 
   return Room;

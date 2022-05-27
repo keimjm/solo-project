@@ -12,10 +12,6 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       type: DataTypes.DATEONLY
     },
-    price: {
-      allowNull: false,
-      type: DataTypes.FLOAT
-    },
     total: {
       allowNull: false,
       type: DataTypes.FLOAT
@@ -32,6 +28,24 @@ module.exports = (sequelize, DataTypes) => {
     }
   
   }) 
+
+  Reservation.makeReservation = async function (user, start_date, end_date, total, room) {
+    const reservation = await Reservation.create({
+      start_date,
+      end_date,
+      total,
+      user_id: user.id,
+      room_id: room.id
+    });
+    await reservation.save();
+    return reservation;
+  }
+
+  Reservation.cancelReservation = async function (id) {
+    const reservation = await Reservation.findByPk(id);
+    await reservation.destroy();
+    return;
+  }
 
   Reservation.associate = function(models) {
       Reservation.belongsTo('User', { foreignKey: 'user_id' });

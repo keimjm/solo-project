@@ -7,7 +7,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Location.hasMany(models.Room, {
         foreignKey: "location_id",
-        as: "room"
+        as: "room",
+        onDelete: "CASCADE",hooks:true
       })
     }
   }
