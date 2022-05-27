@@ -1,6 +1,7 @@
 .filter-bar-icons {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .icon-block {
@@ -12,6 +13,7 @@
 .filter-block {
     position: unset;
     margin: 55px;
+
 }
 
 .filter-icon-button {
@@ -27,4 +29,11 @@
 
 .filter-name {
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+.filter-button {
+    border: 1px solid lightgray;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
 }

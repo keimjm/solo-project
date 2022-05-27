@@ -6,6 +6,9 @@
     align-items: center;
     padding: 10px;
     margin-right: 10px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    background-color: white;
     /* grid-area: 'c';
     margin-right: 25px; */
 }
@@ -14,6 +17,7 @@
     object-fit: contain;
     height: 50px;
     margin-left: 20px;
+    margin-top: 15px;
 
 }
 
@@ -26,6 +30,8 @@
     background-color: white;
     z-index: 100;
     top: 0;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 15px;
 }
 
 .nav-center {
@@ -70,4 +76,8 @@
     color: white;
     border-radius: 30px;
     padding: 7px;
+}
+
+.fa-user {
+    padding-left: 5px;
 }
