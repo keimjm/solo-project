@@ -51,5 +51,39 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Amenity',
   });
+
+  Amenity.addAmenities = async function (room_id, fields) {
+    const {has_tv, has_ac, has_dryer, has_heating, has_internet, has_kitchen, has_parking, has_washer} = fields;
+    const amenities = await Amenity.create({
+      has_ac,
+      has_dryer,
+      has_heating,
+      has_internet,
+      has_kitchen,
+      has_parking,
+      has_tv,
+      has_washer,
+      room_id
+    });
+    await amenities.save();
+    return amenities;
+  };
+
+  Amenity.updateAmenities = async function (room_id, amenity, fields) {
+    const {has_tv, has_ac, has_dryer, has_heating, has_internet, has_kitchen, has_parking, has_washer} = fields;
+    const updateAmenities = await amenity.update({
+      has_ac,
+      has_dryer,
+      has_heating,
+      has_internet,
+      has_kitchen,
+      has_parking,
+      has_tv,
+      has_washer,
+      room_id
+    });
+    return updateAmenities;
+  }
+
   return Amenity;
 };

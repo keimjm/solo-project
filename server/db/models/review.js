@@ -35,5 +35,18 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Review',
   });
+
+  Review.addReview = async function (user, room, fields) {
+    const {rating, comment} = fields;
+    const review = await Review.create({
+      rating, 
+      comment,
+      user_id: user.id,
+      room_id: room.id
+    })
+    await review.save();
+    return review;
+  } 
+
   return Review;
 };

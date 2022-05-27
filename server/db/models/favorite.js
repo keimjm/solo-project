@@ -29,5 +29,21 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Favorite',
   });
+
+  Favorite.addFavorite = async function (user, room) {
+    const favorite = await Favorite.create({
+        user_id: user.id,
+        room_id: room.id
+    })
+    await favorite.save();
+    return favorite;
+  };
+
+  Favorite.removeFavorite = async function (id) {
+    const favorite = await Favorite.findByPk(id);
+    await favorite.destroy();
+    return  
+  }
+
   return Favorite;
 };

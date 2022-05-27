@@ -72,7 +72,7 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'Room',
   });
 
-  Room.addRoom = async function (user, location, fields  ) {
+  Room.addRoom = async function (user, location, fields) {
     const {house_type, description, total_occupancy, total_bedrooms, total_bathrooms, price, file_name} = fields;
     const room = await Room.create({
       house_type,
@@ -88,6 +88,26 @@ module.exports = (sequelize, DataTypes) => {
     await room.save();
     return room;
   };
+
+  Room.deleteRoom = async function (id) {
+    const room = await Room.findByPk(id);
+    await room.destroy();
+    return;
+  };
+
+  Room.updateRoom = async function (room, fields) {
+    const {house_type, description, total_occupancy, total_bedrooms, total_bathrooms, price, file_name} = fields;
+    const updatedRoom = await room.update({
+      house_type,
+      description,
+      total_occupancy,
+      total_bedrooms,
+      total_bathrooms,
+      price,
+      file_name
+    });
+    return updatedRoom;
+  }
 
 
   return Room;

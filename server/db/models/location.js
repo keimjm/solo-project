@@ -37,5 +37,19 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Location',
   });
+
+  Location.addLocation = async function (fields) {
+    const {latitude, longitude, address, city, country} = fields;
+    const location = await Location.create({
+      latitude,
+      longitude,
+      address,
+      city,
+      country
+    })
+    await location.save()
+    return location;
+  }
+
   return Location;
 };
