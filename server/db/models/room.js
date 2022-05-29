@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       });
       Room.hasMany(models.Reservation, {
         foreignKey: "room_id",
-        as: "amenity",
+        as: "reservation",
         onDelete: "CASCADE",hooks:true
       });
       Room.belongsTo(models.Location, {

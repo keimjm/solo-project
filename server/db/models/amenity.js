@@ -13,40 +13,49 @@ module.exports = (sequelize, DataTypes) => {
   }
   Amenity.init({
     has_tv: {
-      types: DataTypes.BOOLEAN,
-      allowNull: false 
+      type: DataTypes.BOOLEAN,
+      allowNull: false, 
+      defaultValue: false
     },
     has_ac: {
-      types: DataTypes.BOOLEAN,
-      allowNull: false 
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
     },
     has_internet: {
-      types: DataTypes.BOOLEAN,
-      allowNull: false 
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
     },
     has_heating: {
-      types: DataTypes.BOOLEAN,
-      allowNull: false 
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false 
     },
     has_kitchen: {
-      types: DataTypes.BOOLEAN,
-      allowNull: false 
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false 
     },
     has_parking: {
-      types: DataTypes.BOOLEAN,
-      allowNull: false 
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
     },
     has_washer: {
-      types: DataTypes.BOOLEAN,
-      allowNull: false 
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
     },
     has_dryer: {
-      types: DataTypes.BOOLEAN,
-      allowNull: false 
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false 
     },
     room_id: {
-      types: DataTypes.INTEGER,
-      allowNull: false 
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: false 
 },    }, {
     sequelize,
     modelName: 'Amenity',

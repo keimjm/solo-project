@@ -2,3 +2,8 @@
     margin-right: 30px;
     margin-left: 30px;
 }
+
+.room-section {
+    display: flex;
+    padding: 25px;
+}

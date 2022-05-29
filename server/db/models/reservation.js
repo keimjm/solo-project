@@ -48,8 +48,8 @@ module.exports = (sequelize, DataTypes) => {
   }
 
   Reservation.associate = function(models) {
-      Reservation.belongsTo('User', { foreignKey: 'user_id' });
-      Reservation.belongsTo('Room', { foreignKey: 'room_id' });
+      Reservation.belongsTo(models.User, { foreignKey: 'user_id' });
+      Reservation.belongsTo(models.Room, { foreignKey: 'room_id' });
   };
   return Reservation;
 };

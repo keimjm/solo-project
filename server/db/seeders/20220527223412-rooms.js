@@ -37,6 +37,17 @@ module.exports = {
         location_id: 3,
         file_name: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwhatifgaming.com%2Fsmallest-minecraft-house-ideas%2F&psig=AOvVaw39dFJP22tSHu3BX4qogxBW&ust=1653841810282000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKDViIHPgvgCFQAAAAAdAAAAABAD"
       },
+      {
+        house_type: 'Expensive',
+        description: "A very open modern style that will allow you to relax in comfort",
+        total_occupancy: 2,
+        total_bedrooms: 1,
+        total_bathrooms: 2, 
+        price: 300.99,
+        owner_id: 1,
+        location_id: 4,
+        file_name: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D935YXFFcCJg&psig=AOvVaw1_EnGlEYpOmcFC5nLIeh2L&ust=1653926865866000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKC-te6LhfgCFQAAAAAdAAAAABAD'
+      },
     
     ], {});
     

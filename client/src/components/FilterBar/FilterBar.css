@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 .icon-block {
@@ -19,6 +20,7 @@
 .filter-icon-button {
     background-color: unset;
     border: unset;
+    cursor: pointer;
 }
 
 
@@ -36,4 +38,5 @@
     background-color: white;
     border-radius: 20px;
     padding: 20px;
+    cursor: pointer;
 }
