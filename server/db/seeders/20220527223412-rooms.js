@@ -13,7 +13,7 @@ module.exports = {
         price: 160.25,
         owner_id: 3,
         location_id: 1,
-        file_name: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pcgamesn.com%2Fminecraft%2Fcastle-ideas-blueprints&psig=AOvVaw0v1eNUy6hjj_Mie-J2LlSE&ust=1653841027221000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCMjg7IvMgvgCFQAAAAAdAAAAABAD"
+        file_name: "https://www.pcgamesn.com/wp-content/uploads/2020/08/minecraft-castle-ideas-blueprints.jpg"
       },
       {
         house_type: 'Lakefront',
@@ -35,7 +35,7 @@ module.exports = {
         price: 30.55,
         owner_id: 3,
         location_id: 3,
-        file_name: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwhatifgaming.com%2Fsmallest-minecraft-house-ideas%2F&psig=AOvVaw39dFJP22tSHu3BX4qogxBW&ust=1653841810282000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKDViIHPgvgCFQAAAAAdAAAAABAD"
+        file_name: "https://whatifgaming.com/wp-content/uploads/2021/11/Modern-House-Minecraft-Small-Design-1024x576.jpg"
       },
       {
         house_type: 'Expensive',
@@ -46,7 +46,7 @@ module.exports = {
         price: 300.99,
         owner_id: 1,
         location_id: 4,
-        file_name: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D935YXFFcCJg&psig=AOvVaw1_EnGlEYpOmcFC5nLIeh2L&ust=1653926865866000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKC-te6LhfgCFQAAAAAdAAAAABAD'
+        file_name: 'https://images.wondershare.com/filmora/article-images/simplistic-modern-house-poster.jpg'
       },
     
     ], {});

@@ -1,5 +1,7 @@
 'use strict';
 const { Model} = require('sequelize');
+const Amenity = require('./amenity')
+const Location = require('./location')
 
 module.exports = (sequelize, DataTypes) => {
   class Room extends Model {
@@ -28,6 +30,11 @@ module.exports = (sequelize, DataTypes) => {
         as: "favorite",
         onDelete: "CASCADE",hooks:true
       });
+      Room.hasMany(models.Review, {
+        foreignKey: "room_id",
+        as: "review",
+        onDelete: "CASCADE",hooks:true
+      })
     }
     
   }
@@ -108,6 +115,23 @@ module.exports = (sequelize, DataTypes) => {
     });
     return updatedRoom;
   }
+
+  // Room.getAllRooms = async function () {
+  //   const rooms = await Room.findAll({
+  //     include: [
+  //       {
+  //       model: Amenity,
+  //       as: "amenity"
+  //     },
+  //     {
+  //        model: Location,
+  //        as: "location"
+  //     }
+  //   ]
+  //   })
+  //   return rooms;
+
+  // }
 
 
   return Room;

@@ -8,6 +8,10 @@
 .card-block > img {
     width: 100%;
     object-fit: fill;
+    min-width: 450px;
+    min-height: 250px;
+    max-width: 350px;
+    max-height: 250px;
 
 }
 
@@ -22,5 +26,5 @@
 }
 
 .card-block:hover {
-    transform: scale(1.10);
+    transform: scale(1.05);
 }
