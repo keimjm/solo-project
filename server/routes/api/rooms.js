@@ -31,4 +31,22 @@ router.get('/',
     })
 );
 
+
+router.get('/:id', asyncHandler(async function(req, res) {
+  const room = await Room.findByPk(req.params.id);
+  return res.json({room});
+}));
+
+router.put('/:id', asyncHandler(async function(req, res) {
+  const room = await Room.findByPk(req.params.id);
+  let updatedRoom = Room.updateRoom(room, req.body);
+  return res.json({updatedRoom});
+}));
+
+router.delete('/:id', asyncHandler(async function(req, res) {
+  //const room = await Room.findByPk(req.params.id);
+  Room.deleteRoom(req.params.id)
+  return res.json({message: 'Success'});
+}));
+
 module.exports = router;

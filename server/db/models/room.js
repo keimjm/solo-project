@@ -116,22 +116,6 @@ module.exports = (sequelize, DataTypes) => {
     return updatedRoom;
   }
 
-  // Room.getAllRooms = async function () {
-  //   const rooms = await Room.findAll({
-  //     include: [
-  //       {
-  //       model: Amenity,
-  //       as: "amenity"
-  //     },
-  //     {
-  //        model: Location,
-  //        as: "location"
-  //     }
-  //   ]
-  //   })
-  //   return rooms;
-
-  // }
 
 
   return Room;
