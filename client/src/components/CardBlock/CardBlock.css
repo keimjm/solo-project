@@ -1,0 +1,30 @@
+.card-info {
+    padding: 25px;
+    border-radius: 15px;
+    border: 1;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+.card-block > img {
+    width: 100%;
+    object-fit: fill;
+    min-width: 450px;
+    min-height: 250px;
+    max-width: 350px;
+    max-height: 250px;
+
+}
+
+.card-block {
+    border: 0px solid black;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 100ms ease-in;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: 10px 5px 5px lightgray;
+}
+
+.card-block:hover {
+    transform: scale(1.05);
+}
