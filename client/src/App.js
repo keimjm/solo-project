@@ -5,6 +5,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Home from './Home.js'
+import RoomPage from "./components/RoomPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,7 +17,11 @@ function App() {
   return (
     <div className="app">
     <Navigation isLoaded={isLoaded} />
-    <Home /> 
+    <Switch>
+      <Route>
+        <Home path="/" exact/> 
+      </Route>
+    </Switch>
       
       {isLoaded && (
         <Switch>

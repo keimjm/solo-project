@@ -34,8 +34,8 @@ export const loadRooms = () => async dispatch =>  {
     return data.rooms;
 };
 
-export const getARoom = () => async dispatch => {
-  const response = await csrfFetch('api/rooms/:id');
+export const getARoom = (id) => async dispatch => {
+  const response = await csrfFetch(`api/rooms/${id}`);
   const data = await response.json();
 
   dispatch(getOneRoom(data.room));

@@ -81,3 +81,28 @@
 .fa-user {
     padding-left: 5px;
 }
+
+.dropdown-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+    flex-direction: column;
+    overflow: hidden;
+    position: absolute;
+    top: 58px;
+    border: 0px solid black;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 100ms ease-in;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: 10px 5px 5px lightgray;
+    
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
