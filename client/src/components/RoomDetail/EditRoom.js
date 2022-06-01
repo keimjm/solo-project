@@ -115,7 +115,7 @@ function EditRoom({ room, hideForm }) {
         placeholder="Address"
         value={address}
         onChange={updateAddress} />
-      <button type="submit">Update Pokemon</button>
+      <button type="submit">Update Room</button>
       <button type="button" onClick={handleCancelClick}>Cancel</button>
     </form>
   </section>
