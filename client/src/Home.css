@@ -1,15 +1,24 @@
 .home-page {
-    margin-right: 30px;
-    margin-left: 30px;
+    margin-right: 50px;
+    margin-left: 50px;
 }
 
 .room-section {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     padding: 25px;
+    width: 100%;
+    /* margin-left: 30px;
+    margin-right: 30px; */
+}
+
+.room-card-link {
+
 }
 
 .room-nav-link {
     text-decoration: none;
     color: black;
-    
 }
