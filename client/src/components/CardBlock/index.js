@@ -8,13 +8,14 @@ function CardBlock({ room }) {
 
   
   
+  
   return (
     <div className='card-block'>
       <img src={room.file_name}
       alt="" />
         <div className='card-info'>
             <h2>{room.location.city}, {room.location.country}</h2>
-            <span>{avgRating} <i class="fa-solid fa-star fa-sm"></i></span>
+            <span>{avgRating} <i className="fa-solid fa-star fa-sm"></i></span>
             <h4></h4>
             <p>${room.price}</p>
         </div>
