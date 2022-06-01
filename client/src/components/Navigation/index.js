@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
+import Dropdown from '../Dropdown';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
@@ -34,8 +35,7 @@ function Navigation({ isLoaded }){
   } else {
     sessionLinks = (
       <>
-        <LoginFormModal />
-        <NavLink to="/signup">Sign Up</NavLink>
+       <Dropdown />
       </>
     );
   }
@@ -61,16 +61,17 @@ function Navigation({ isLoaded }){
         <i className="fa-solid fa-grip-lines fa-sm"></i>
         <i className="fa-solid fa-user "></i>
       </button>
-    </div>
-
-    
       {showMenu && (
-      <ul>
-        <li>
+     <ul className='dropdown-list'>
+     <li className='dropdown-item'>
           {isLoaded && sessionLinks}
         </li>
       </ul>
       )}
+    </div>
+
+    
+
     </div>
   );
 }

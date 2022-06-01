@@ -42,10 +42,11 @@ function Home() {
           {rooms.map((room) => {
             //console.log(room)
           return (
+            <div className='room-card-link'>
              <NavLink key={room.id} to={`/rooms/${room.id}`} room={room} className="room-nav-link">
             <CardBlock key={room.id} room={room} />
             </NavLink>
-            
+            </div>
           );
         })}
         </div>

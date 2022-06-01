@@ -1,16 +1,18 @@
 import React from 'react'
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {getARoom} from '../../store/rooms'
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import EditRoom from './EditRoom';
+
 
 function RoomDetail() {
-    //console.log(room)
     const { roomId } = useParams();
     const dispatch = useDispatch();
-    // console.log(roomId)
+    const sessionUser = useSelector(state => state.session.user);
+    const [showEditRoom, setShowEditRoom] = useState(false);
 
-    //dispatch(getARoom(roomId)) //.then(room => console.log(room))
+    
     
     useEffect(() => {
         console.log("HERE")
@@ -20,12 +22,19 @@ function RoomDetail() {
 
     const room = useSelector(state => state.room.room);
 
+
     console.log(room)
 
     //const total = room.review.reduce((acc, review) => acc + review.rating, 0);
     //const avgRating = total / room.review.length;
 
     const avgRating = 4.5;
+
+    if(showEditRoom) {
+      return (
+      <EditRoom key={room?.id} room={room} hideForm={() => setShowEditRoom(false)} />
+      )
+    }
 
 
   return (
@@ -38,7 +47,11 @@ function RoomDetail() {
       </div>
     <img src={room?.file_name}
     alt="" className='room-image'/>
-      
+    <div>
+      {(!showEditRoom && (sessionUser?.id === room?.owner_id)) && (
+            <button onClick={() => setShowEditRoom(true)}>Edit</button>
+          )}
+          </div>
   </div>
   )
 }

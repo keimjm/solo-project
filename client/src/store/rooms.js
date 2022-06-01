@@ -3,6 +3,7 @@ import { csrfFetch } from './csrf';
 const GET_ROOMS = 'rooms/GET_ROOMS';
 const REMOVE_ROOM = 'rooms/REMOVE_ROOM';
 const GET_ONE_ROOM = 'rooms/GET_ONE_ROOM';
+const EDIT_ROOM = 'rooms/EDIT_ROOM'
 
 
 const getRooms = (rooms) => {
@@ -18,6 +19,13 @@ const getRooms = (rooms) => {
       room
     };
   };
+
+  const editRoom = (room) => {
+    return {
+      type: EDIT_ROOM,
+      room
+    }
+  }
 
 const removeRoom = () => {
     return {
@@ -43,6 +51,20 @@ export const getARoom = (id) => async dispatch => {
   return data.room;
 }
 
+export const editARoom = (id, payload) => async dispatch => {
+  const response = await csrfFetch(`/api/rooms/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify(payload),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+
+  const data = await response.json();
+  dispatch(editRoom(data.room))
+  return data.room
+}
+
 
 
 const initialState = { rooms: [], room: null };
@@ -62,6 +84,10 @@ const roomReducer = (state = initialState, action) => {
       newState = Object.assign({}, state);
       newState.room = action.room;
       return newState
+      case EDIT_ROOM:
+        newState = Object.assign({}, state);
+        newState.room = action.room;
+        return newState
     case REMOVE_ROOM:
       newState = Object.assign({}, state);
       newState.rooms = null;
