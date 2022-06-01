@@ -35,16 +35,16 @@ function RoomDetail() {
 
 
   return (
-    <div className='card-block'>
-        <div className='card-info'>
+    <div className='room-block'>
+        <div className='room-info'>
           <h2>{room?.location?.city}, {room?.location?.country}</h2>
           <span>{avgRating} <i className="fa-solid fa-star fa-sm"></i></span>
           <h4></h4>
           <p>${room?.price}</p>
       </div>
-    <img src={room?.file_name}
-    alt="" className='room-image'/>
-    <div>
+      <img src={room?.file_name}
+      alt="" className='room-image'/>
+  <div>
       {(!showEditRoom && (sessionUser?.id === room?.owner_id)) && (
             <button onClick={() => setShowEditRoom(true)}>Edit</button>
           )}

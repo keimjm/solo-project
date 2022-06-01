@@ -1,6 +1,7 @@
 import React, { useState} from 'react'
 import { editARoom } from '../../store/rooms';
 import { useDispatch } from 'react-redux'
+import './EditRoom.css'
 
 function EditRoom({ room, hideForm }) {
 
@@ -58,21 +59,22 @@ function EditRoom({ room, hideForm }) {
       };
 
   return (
+    <div className='edit-form'>
     <section className="edit-form-holder centered middled">
-    <form onSubmit={handleSubmit}>
-      <input
+      <form onSubmit={handleSubmit}>
+        <input
         type="text"
         placeholder="House Type"
         required
         value={type}
         onChange={updateType} />
-      <input
+        <input
         type="text"
         placeholder="Description"
         required
         value={description}
         onChange={updateDescription} />
-      <input
+        <input
         type="number"
         placeholder="Occupancy"
         min="0"
@@ -80,7 +82,7 @@ function EditRoom({ room, hideForm }) {
         required
         value={occupancy}
         onChange={updateOccupancy} />
-      <input
+        <input
         type="number"
         placeholder="Bedrooms"
         value={bedrooms}
@@ -90,17 +92,17 @@ function EditRoom({ room, hideForm }) {
         placeholder="Bathrooms"
         value={bathrooms}
         onChange={updateBathrooms} />
-      <input
+        <input
         type="number"
         placeholder="Price"
         value={price}
         onChange={updatePrice} />
-      <input
+        <input
         type="text"
         placeholder="Image"
         value={image}
         onChange={updateImage} />
-      <input
+        <input
         type="text"
         placeholder="City"
         value={city}
@@ -119,6 +121,7 @@ function EditRoom({ room, hideForm }) {
       <button type="button" onClick={handleCancelClick}>Cancel</button>
     </form>
   </section>
+  </div>
   )
 }
 

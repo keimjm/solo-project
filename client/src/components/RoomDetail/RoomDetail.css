@@ -5,10 +5,10 @@
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
 
-.room-image {
+.room-block > img {
     width: 100%;
     object-fit: fill;
-    min-width: 450px;
+    min-width: 350px;
     min-height: 250px;
     max-width: 350px;
     max-height: 350px;
