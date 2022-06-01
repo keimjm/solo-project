@@ -33,7 +33,22 @@ router.get('/',
 
 
 router.get('/:id', asyncHandler(async function(req, res) {
-  const room = await Room.findByPk(req.params.id);
+  const room = await Room.findByPk(req.params.id, {
+    include: [
+      {
+      model: Amenity,
+      as: "amenity"
+    },
+    {
+       model: Location,
+       as: "location"
+    },
+    {
+        model: Review,
+        as: "review"
+    }
+  ]
+  })
   return res.json({room});
 }));
 

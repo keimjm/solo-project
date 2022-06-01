@@ -5,6 +5,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Home from './Home.js'
+import RoomDetail from "./components/RoomDetail";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,7 +17,18 @@ function App() {
   return (
     <div className="app">
     <Navigation isLoaded={isLoaded} />
-    <Home /> 
+    <Switch>
+      <Route
+      path="/"
+        exact
+      >
+        <Home />
+      </Route>
+      <Route path="/rooms/:roomId" exact>
+        <RoomDetail />
+      </Route>
+    </Switch>
+     
       
       {isLoaded && (
         <Switch>

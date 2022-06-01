@@ -7,3 +7,9 @@
     display: flex;
     padding: 25px;
 }
+
+.room-nav-link {
+    text-decoration: none;
+    color: black;
+    
+}

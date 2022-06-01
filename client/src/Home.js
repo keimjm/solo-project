@@ -1,22 +1,25 @@
 import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 import FilterBar from './components/FilterBar/index'
 import './Home.css'
 import CardBlock from './components/CardBlock'
-import {loadRooms} from './store/rooms';
+import {loadRooms, getARoom} from './store/rooms';
+import { NavLink } from 'react-router-dom';
 
 function Home() {
   const dispatch = useDispatch();
-  const history = useHistory();
+  // const history = useHistory();
 
   useEffect(() => {
     dispatch(loadRooms());
   }, [dispatch]);
 
-  const selectRoom = (id) => {
-    history.push(`/rooms/${id}`)
-  }
+
+
+  // const selectRoom = (id) => {
+  //   history.push(`/rooms/${id}`)
+  // }
 
   const rooms = useSelector(state => {
     
@@ -37,15 +40,14 @@ function Home() {
 
         <div className='room-section'>
           {rooms.map((room) => {
-            console.log(room)
+            //console.log(room)
           return (
-            <CardBlock key={room.id} room={room} onClick={() => selectRoom(room.id)}/>
+             <NavLink key={room.id} to={`/rooms/${room.id}`} room={room} className="room-nav-link">
+            <CardBlock key={room.id} room={room} />
+            </NavLink>
+            
           );
         })}
-            
-            {/* <CardBlock/>
-            <CardBlock/>
-            <CardBlock/> */}
         </div>
     </div>
   )

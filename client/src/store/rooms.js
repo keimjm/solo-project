@@ -34,8 +34,9 @@ export const loadRooms = () => async dispatch =>  {
     return data.rooms;
 };
 
-export const getARoom = () => async dispatch => {
-  const response = await csrfFetch('api/rooms/:id');
+export const getARoom = (id) => async dispatch => {
+  const response = await csrfFetch(`/api/rooms/${id}`);
+  //console.log(url)
   const data = await response.json();
 
   dispatch(getOneRoom(data.room));
@@ -44,7 +45,7 @@ export const getARoom = () => async dispatch => {
 
 
 
-const initialState = { rooms: [] };
+const initialState = { rooms: [], room: null };
 
 const roomReducer = (state = initialState, action) => {
   let newState;
