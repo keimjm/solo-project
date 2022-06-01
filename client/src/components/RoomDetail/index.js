@@ -13,9 +13,7 @@ function RoomDetail() {
     const [showEditRoom, setShowEditRoom] = useState(false);
 
     
-    
     useEffect(() => {
-        console.log("HERE")
         dispatch(getARoom(roomId));
       }, [roomId]);
  
@@ -23,12 +21,11 @@ function RoomDetail() {
     const room = useSelector(state => state.room.room);
 
 
-    console.log(room)
 
-    //const total = room.review.reduce((acc, review) => acc + review.rating, 0);
-    //const avgRating = total / room.review.length;
+    const total = room?.review.reduce((acc, review) => acc + review.rating, 0);
+    const avgRating = total / room?.review.length;
 
-    const avgRating = 4.5;
+
 
     if(showEditRoom) {
       return (
