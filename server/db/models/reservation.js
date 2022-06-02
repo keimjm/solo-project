@@ -30,6 +30,8 @@ module.exports = (sequelize, DataTypes) => {
   }) 
 
   Reservation.makeReservation = async function (user, start_date, end_date, total, room) {
+    
+
     const reservation = await Reservation.create({
       start_date,
       end_date,

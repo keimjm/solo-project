@@ -5,6 +5,7 @@ import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
 import Dropdown from '../Dropdown';
+import CreateRoom from "../CreateRoom";
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
@@ -26,6 +27,7 @@ function Navigation({ isLoaded }){
   
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
+
 
   let sessionLinks;
   if (sessionUser) {
@@ -55,7 +57,9 @@ function Navigation({ isLoaded }){
     </div>
 
     <div className='nav-right'>
-      <p>Become a Host</p>
+    <NavLink exact to={`/rooms`}>
+    <button className='create-room-button'>Become a Host</button>
+    </NavLink>
       <i className="fa-solid fa-globe"></i>
       <button className="nav-menu-profile" onClick={openMenu}>
         <i className="fa-solid fa-grip-lines fa-sm"></i>

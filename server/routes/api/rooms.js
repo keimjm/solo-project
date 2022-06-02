@@ -3,7 +3,7 @@ const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { Room, Amenity, Location, Review } = require('../../db/models');
+const { Room, Amenity, Location, Review, Reservation } = require('../../db/models');
 
 
 
@@ -25,11 +25,13 @@ router.get('/',
             }
           ]
           })
-        console.log(rooms)
         return res.json({rooms});
 
     })
 );
+
+
+
 
 
 router.get('/:id', asyncHandler(async function(req, res) {
@@ -46,6 +48,10 @@ router.get('/:id', asyncHandler(async function(req, res) {
     {
         model: Review,
         as: "review"
+    },
+    {
+      model: Reservation,
+      as: "reservation"
     }
   ]
   })
@@ -63,5 +69,29 @@ router.delete('/:id', asyncHandler(async function(req, res) {
   Room.deleteRoom(req.params.id)
   return res.json({message: 'Success'});
 }));
+
+
+router.get("/:id/bookings", 
+asyncHandler(async function(req, res) {
+  const roomId = req.params.id
+  return await Reservation.findAll({
+    where: {
+      room_id: roomId
+    },
+  }); 
+})
+)
+
+router.post("/:id/bookings", 
+asyncHandler(async function(req, res) {
+  const roomId = req.params.id;
+  const {user, room, start_date, end_date, total} = req.body
+  const reservation = await Reservation.makeReservation(user, start_date, end_date, total, room);
+
+  return res.json({reservation});
+})
+)
+
+
 
 module.exports = router;

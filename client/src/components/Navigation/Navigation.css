@@ -107,3 +107,11 @@
     align-items: center;
     height: 50px;
 }
+
+.create-room-button {
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    background-color: white;
+    margin-right: 10px;
+    cursor: pointer;
+}

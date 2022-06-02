@@ -6,6 +6,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Home from './Home.js'
 import RoomDetail from "./components/RoomDetail";
+import CreateRoom from "./components/CreateRoom";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,6 +27,9 @@ function App() {
       </Route>
       <Route path="/rooms/:roomId" exact>
         <RoomDetail />
+      </Route>
+      <Route path="/rooms/" exact>
+        <CreateRoom />
       </Route>
     </Switch>
      

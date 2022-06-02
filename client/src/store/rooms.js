@@ -4,6 +4,7 @@ const GET_ROOMS = 'rooms/GET_ROOMS';
 const REMOVE_ROOM = 'rooms/REMOVE_ROOM';
 const GET_ONE_ROOM = 'rooms/GET_ONE_ROOM';
 const EDIT_ROOM = 'rooms/EDIT_ROOM'
+const CREATE_ROOM = 'rooms/CREATE_ROOM'
 
 
 const getRooms = (rooms) => {
@@ -32,6 +33,13 @@ const removeRoom = () => {
       type: REMOVE_ROOM,
     };
   };
+
+const createARoom = (room) => {
+  return {
+    type: CREATE_ROOM,
+    room
+  }
+}
 
 
 export const loadRooms = () => async dispatch =>  {
@@ -65,6 +73,34 @@ export const editARoom = (id, payload) => async dispatch => {
   return data.room
 }
 
+export const removeARoom = (id) => async dispatch => {
+  const response = await csrfFetch(`/api/rooms/${id}`, {
+    method: 'DELETE',
+    body: JSON.stringify(id),
+    headers: {
+      'Content-Type': "application/json"
+    }
+  })
+
+  const data = await response.json();
+  dispatch(removeRoom())
+  return 
+}
+
+
+export const createRoom = (payload, id) => async dispatch => {
+  const response = await csrfFetch(`/api/users/${id}/room`, {
+    method: "POST",
+    body: JSON.stringify(payload),
+    headers: {
+      'Content-Type': "application/json"
+    }
+  })
+
+  const data = await response.json();
+  dispatch(createARoom(data.room));
+  return data.room
+}
 
 
 const initialState = { rooms: [], room: null };
@@ -74,10 +110,6 @@ const roomReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ROOMS:
       newState = Object.assign({}, state);
-      //const allRooms = {};
-    //   action.rooms.forEach(room => {
-    //     allRooms[room.id] = room;
-    //   });
      newState.rooms = action.rooms;
       return newState
     case GET_ONE_ROOM:
@@ -90,7 +122,7 @@ const roomReducer = (state = initialState, action) => {
         return newState
     case REMOVE_ROOM:
       newState = Object.assign({}, state);
-      newState.rooms = null;
+      newState.room = null;
       return newState;
     default:
       return state;

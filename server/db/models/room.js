@@ -79,8 +79,10 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'Room',
   });
 
-  Room.addRoom = async function (user, location, fields) {
-    const {house_type, description, total_occupancy, total_bedrooms, total_bathrooms, price, file_name} = fields;
+  Room.addRoom = async function (user, fields) {
+    const {house_type, description, total_occupancy, total_bedrooms, total_bathrooms, price, file_name, latitude, longitude, address, city, country} = fields;
+    const locationFields = {latitude, longitude, address, city, country}
+    const location = await Location.addLocation(locationFields);
     const room = await Room.create({
       house_type,
       description,
