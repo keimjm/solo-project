@@ -1,0 +1,52 @@
+.centered {
+    justify-content: center;
+  }
+
+  .middled {
+    align-items: center;
+  }
+
+ .edit-form-holder {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  
+  .edit-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  /* .edit-form > input {
+    border: 0;
+    border-bottom: 2px solid #CCC;
+    box-sizing: border-box;
+    display: inline-block;
+    outline: 0;
+    padding: .25em .5em;
+    width: 100%;
+  } */
+
+  .edit-form > input[type=text], .edit-form > input[type=number] {
+    width:100%;
+    padding:8px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 2px solid #ccc;
+    border-radius: 4px ;
+}
+
+.edit-form > button {
+  width: 100%;
+  padding:8px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 2px solid #ccc;
+  border-radius: 4px ;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

@@ -1,22 +1,23 @@
 import React, { useState} from 'react'
-import { editARoom, removeARoom } from '../../store/rooms';
+import { createRoom } from '../../store/rooms';
 import { useDispatch } from 'react-redux'
-import './EditRoom.css'
+import { Redirect } from 'react-router-dom'
+import './CreateRoom.css'
 
-function EditRoom({ room, hideForm }) {
 
+function CreateRoom() {
     const dispatch = useDispatch();
 
-    const [type, setType] = useState(room.house_type);
-    const [description, setDescription] = useState(room.description);
-    const [occupancy, setOccupancy] = useState(room.total_occupancy);
-    const [bedrooms, setBedrooms] = useState(room.total_bedrooms);
-    const [bathrooms, setBathrooms] = useState(room.total_bathrooms);
-    const [price, setPrice] = useState(room.price);
-    const [image, setImage] = useState(room.file_name);
-    const [city, setCity] = useState(room.location.city);
-    const [country, setCountry] = useState(room.location.country);
-    const [address, setAddress] = useState(room.location.address)
+    const [type, setType] = useState("");
+    const [description, setDescription] = useState("");
+    const [occupancy, setOccupancy] = useState("");
+    const [bedrooms, setBedrooms] = useState(0);
+    const [bathrooms, setBathrooms] = useState(0);
+    const [price, setPrice] = useState(0);
+    const [image, setImage] = useState("");
+    const [city, setCity] = useState("");
+    const [country, setCountry] = useState("");
+    const [address, setAddress] = useState("");
 
   
     const updateDescription = (e) => setDescription(e.target.value);
@@ -34,7 +35,6 @@ function EditRoom({ room, hideForm }) {
         e.preventDefault();
 
             const payload = {
-      ...room,
       description,
       occupancy,
       bedrooms,
@@ -47,26 +47,23 @@ function EditRoom({ room, hideForm }) {
       address
     };
     
-    let updatedRoom = await dispatch(editARoom(room.id, payload));
-    if (updatedRoom) {
-      hideForm();
+    let createdRoom = await dispatch(createRoom(payload));
+    if (createdRoom) {
+      
     }
     }
 
     const handleCancelClick = (e) => {
         e.preventDefault();
-        hideForm();
+        
+        <Redirect exact to="/" />
       };
 
-    const handleDeleteClick = (e) => {
-        e.preventDefault();
-        dispatch(removeARoom(room.id))
-    }
 
-  return  (
+  return (
     <div >
-    <section className="edit-form-holder centered middled">
-      <form className='edit-form' onSubmit={handleSubmit}>
+    <section className="create-form-holder centered middled">
+      <form className='create-form' onSubmit={handleSubmit}>
         <input
         type="text"
         placeholder="House Type"
@@ -122,8 +119,7 @@ function EditRoom({ room, hideForm }) {
         placeholder="Address"
         value={address}
         onChange={updateAddress} />
-      <button type="submit">Update Room</button>
-      <button type="button" onClick={handleDeleteClick}>Delete Room</button>
+      <button type="submit">Create Room</button>
       <button type="button" onClick={handleCancelClick}>Cancel</button>
     </form>
   </section>
@@ -131,4 +127,4 @@ function EditRoom({ room, hideForm }) {
   )
 }
 
-export default EditRoom
+export default CreateRoom;
