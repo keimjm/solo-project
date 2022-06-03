@@ -54,6 +54,15 @@ app.use((_req, _res, next) => {
   next(err);
 });
 
+app.use((err, req, res, next) => {
+  if (err.status === 404) {
+    res.status(404);
+    res.json({error: "Page Not Found"})
+  } else {
+    next(err);
+  }
+});
+
 // Process sequelize errors
 app.use((err, _req, _res, next) => {
   // check if error is a Sequelize error:

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 // import { useHistory } from 'react-router-dom'
 import FilterBar from './components/FilterBar/index'
@@ -9,6 +9,7 @@ import { NavLink } from 'react-router-dom';
 
 function Home() {
   const dispatch = useDispatch();
+  const [filter, setFilter] = useState(false);
   // const history = useHistory();
 
   useEffect(() => {
@@ -16,10 +17,6 @@ function Home() {
   }, [dispatch]);
 
 
-
-  // const selectRoom = (id) => {
-  //   history.push(`/rooms/${id}`)
-  // }
 
   const rooms = useSelector(state => {
     
@@ -36,9 +33,9 @@ function Home() {
 
   return (
     <div className='home-page'>
-        <FilterBar/>
+        <FilterBar filterResults={() => setFilter(true)} />
 
-        <div className='room-section'>
+       {(!filter && ( <div className='room-section'>
           {rooms.map((room) => {
             //console.log(room)
           return (
@@ -50,6 +47,7 @@ function Home() {
           );
         })}
         </div>
+        ))}
     </div>
   )
 }

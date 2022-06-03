@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 import {getARoom} from '../../store/rooms'
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import EditRoom from './EditRoom';
 import './RoomDetail.css'
@@ -10,6 +10,7 @@ import CreateReservation from '../Reservations';
 import EditReservation from '../Reservations/EditReservation';
 
 function RoomDetail() {
+    const history = useHistory();
     const { roomId } = useParams();
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
@@ -44,9 +45,14 @@ function RoomDetail() {
     }
 
     if(showCreateReservation) {
+
+      if(!sessionUser?.id){
+        history.push("/login");
+      } else {
       content = (
         <CreateReservation key={room?.id} room={room} user={sessionUser} hideCreateForm={() => setShowCreateReservation(false)} />
       )
+      }
     }  else {
       content = (
         < AssociatedBookings key={room?.id} room={room} user={sessionUser} />

@@ -5,11 +5,19 @@ const REMOVE_ROOM = 'rooms/REMOVE_ROOM';
 const GET_ONE_ROOM = 'rooms/GET_ONE_ROOM';
 const EDIT_ROOM = 'rooms/EDIT_ROOM'
 const CREATE_ROOM = 'rooms/CREATE_ROOM'
+const FILTER_ROOMS = 'rooms/FILTER_ROOMS'
 
 
 const getRooms = (rooms) => {
     return {
       type: GET_ROOMS,
+      rooms
+    };
+  };
+
+  const filterRooms = (rooms) => {
+    return {
+      type: FILTER_ROOMS,
       rooms
     };
   };
@@ -102,6 +110,10 @@ export const createRoom = (payload, id) => async dispatch => {
   return data.room
 }
 
+export const filter = (filtered) => async dispatch =>  {
+  dispatch(filterRooms(filtered))
+}
+
 
 const initialState = { rooms: [], room: null };
 
@@ -124,6 +136,10 @@ const roomReducer = (state = initialState, action) => {
       newState = Object.assign({}, state);
       newState.room = null;
       return newState;
+    case FILTER_ROOMS:
+     newState = Object.assign({}, state);
+     newState.rooms = action.rooms;
+      return newState
     default:
       return state;
   }
