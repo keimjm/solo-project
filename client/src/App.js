@@ -7,6 +7,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Home from './Home.js'
 import RoomDetail from "./components/RoomDetail";
+import ProfilePage from "./ProfilePage";
 import CreateRoom from "./components/CreateRoom";
 import SearchPage from "./components/SearchPage";
 import NotFound from "./components/NotFound";
@@ -40,6 +41,9 @@ function App() {
       </Route  >
       <Route exact path="/map">
         <Map />
+      </Route>
+      <Route exact path="/users/:userId">
+        <ProfilePage />
       </Route>
       
       {isLoaded && (

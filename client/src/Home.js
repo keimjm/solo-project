@@ -19,10 +19,7 @@ function Home() {
 
 
   const rooms = useSelector(state => {
-    
-    if(state.room.rooms.length > 0){
-      return state.room.rooms    //.map(roomId => state.room.rooms[roomId])
-    }
+     if(state.room.rooms.length > 0) return state.room.rooms
   });
 
 

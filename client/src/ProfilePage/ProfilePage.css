@@ -1,0 +1,89 @@
+.room-info {
+    padding: 25px;
+    border-radius: 15px;
+    border: 1;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+.room-block > img {
+    width: 100%;
+    object-fit: fill;
+    min-width: 350px;
+    min-height: 250px;
+    max-width: 350px;
+    max-height: 350px;
+
+}
+
+.room-block {
+    border: 0px solid black;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: center;
+    transition: transform 100ms ease-in;
+    cursor: pointer;
+    box-shadow: 10px 5px 5px lightgray;
+    margin-right: 30px;
+    margin-left: 30px;
+    width: auto;
+
+}
+
+.card-block:hover {
+    transform: scale(1.05);
+}
+
+.edit-room {
+    margin: 30px;
+}   
+
+.description-tag {
+    margin: 30px;
+}
+
+.room-btn {
+    cursor: pointer;
+    box-shadow: 00 20px 10px lightgray;
+    border-radius: 25px;
+    display: block;
+    width: 80%;
+    margin: 15px auto;
+    padding: 10px 30px;
+    border: 0;
+    outline: none;
+    background-color: red;
+}
+
+
+.card-info {
+    padding: 25px;
+    border-radius: 15px;
+    border: 1;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+.card-block > img {
+    width: 100%;
+    object-fit: fill;
+    min-width: 450px;
+    min-height: 250px;
+    max-width: 350px;
+    max-height: 250px;
+
+}
+
+.card-block {
+    border: 0px solid black;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 100ms ease-in;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: 10px 5px 5px lightgray;
+}
+
+.card-block:hover {
+    transform: scale(1.05);
+}
