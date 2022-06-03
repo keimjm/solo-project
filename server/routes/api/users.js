@@ -3,7 +3,7 @@ const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { User, Room } = require('../../db/models');
+const { User, Room, Location } = require('../../db/models');
 
 const router = express.Router();
 
@@ -45,8 +45,11 @@ router.post(
 
   router.post('/:id/room', 
   asyncHandler(async (req, res) => {
+    const {address, city, country} = req.body
     const user = await User.findByPk(req.params.id);
-    const room = await Room.addRoom(user, req.body);
+    const locationFields = {latitude: 37.550407, longitude: -77.432006, address, city, country};
+    const location = await Location.addLocation(locationFields);
+    const room = await Room.addRoom(user, location, req.body);
 
     return res.json({room});
 

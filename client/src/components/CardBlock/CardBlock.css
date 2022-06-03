@@ -28,3 +28,12 @@
 .card-block:hover {
     transform: scale(1.05);
 }
+
+.fa-heart {
+    color: transparent;
+    border: 1px solid white;
+}
+
+.fav-button {
+    
+}

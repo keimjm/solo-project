@@ -41,3 +41,16 @@
 .description-tag {
     margin: 30px;
 }
+
+.room-btn {
+    cursor: pointer;
+    box-shadow: 00 20px 10px lightgray;
+    border-radius: 25px;
+    display: block;
+    width: 80%;
+    margin: 15px auto;
+    padding: 10px 30px;
+    border: 0;
+    outline: none;
+    background-color: red;
+}

@@ -9,6 +9,7 @@
     border-radius: 10px;
     border: 1px solid lightgray;
     background-color: white;
+    cursor: pointer;
     /* grid-area: 'c';
     margin-right: 25px; */
 }
@@ -87,19 +88,20 @@
     list-style: none;
     display: flex;
     align-items: center;
-    padding: .5rem;
+    padding: 10px;
     flex-direction: column;
     overflow: hidden;
     position: absolute;
     top: 58px;
+    right: 5px;
     border: 0px solid black;
     overflow: hidden;
     border-radius: 10px;
     transition: transform 100ms ease-in;
     cursor: pointer;
     margin: 10px;
-    box-shadow: 10px 5px 5px lightgray;
-    
+    box-shadow: 10px 5px 5px 5px lightgray;
+    z-index: 100;;
 }
 
 .dropdown-item {
@@ -110,8 +112,15 @@
 
 .create-room-button {
     border-radius: 10px;
-    border: 1px solid lightgray;
+    border: none;
     background-color: white;
     margin-right: 10px;
     cursor: pointer;
+}
+
+.dropdown-link {
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+    
 }

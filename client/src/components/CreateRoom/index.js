@@ -1,19 +1,20 @@
 import React, { useState} from 'react'
 import { createRoom } from '../../store/rooms';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import './CreateRoom.css'
 
 
 function CreateRoom() {
     const dispatch = useDispatch();
+    const sessionUser = useSelector(state => state.session.user);
 
     const [type, setType] = useState("");
     const [description, setDescription] = useState("");
     const [occupancy, setOccupancy] = useState("");
-    const [bedrooms, setBedrooms] = useState(0);
-    const [bathrooms, setBathrooms] = useState(0);
-    const [price, setPrice] = useState(0);
+    const [bedrooms, setBedrooms] = useState("");
+    const [bathrooms, setBathrooms] = useState("");
+    const [price, setPrice] = useState("");
     const [image, setImage] = useState("");
     const [city, setCity] = useState("");
     const [country, setCountry] = useState("");
@@ -36,18 +37,18 @@ function CreateRoom() {
 
             const payload = {
       description,
-      occupancy,
-      bedrooms,
-      bathrooms,
+      total_occupancy: occupancy,
+      total_bedrooms: bedrooms,
+      total_bathrooms: bathrooms,
       price,
-      type,
-      image,
+      house_type: type,
+      file_name: image,
       country,
       city,
       address
     };
     
-    let createdRoom = await dispatch(createRoom(payload));
+    let createdRoom = await dispatch(createRoom(payload, sessionUser?.id));
     if (createdRoom) {
       
     }
@@ -61,19 +62,21 @@ function CreateRoom() {
 
 
   return (
-    <div >
-    <section className="create-form-holder centered middled">
+    <div className="create-form-holder centered middled">
+    <h1>Add your Room</h1>
       <form className='create-form' onSubmit={handleSubmit}>
         <input
         type="text"
         placeholder="House Type"
         required
+        className='input'
         value={type}
         onChange={updateType} />
         <input
         type="text"
         placeholder="Description"
         required
+        className='input'
         value={description}
         onChange={updateDescription} />
         <input
@@ -82,47 +85,57 @@ function CreateRoom() {
         min="0"
         max="100"
         required
+        className='input'
         value={occupancy}
         onChange={updateOccupancy} />
         <input
         type="number"
         placeholder="Bedrooms"
         value={bedrooms}
+        min="0"
+        className='input'
         onChange={updateBedrooms} />
         <input
         type="number"
         placeholder="Bathrooms"
         value={bathrooms}
+        min="0"
+        className='input'
         onChange={updateBathrooms} />
         <input
         type="number"
         placeholder="Price"
         value={price}
+        min="0"
+        className='input'
         onChange={updatePrice} />
         <input
         type="text"
         placeholder="Image"
         value={image}
+        className='input'
         onChange={updateImage} />
         <input
         type="text"
         placeholder="City"
         value={city}
+        className='input'
         onChange={updateCity} />
         <input
         type="text"
         placeholder="Country"
         value={country}
+        className='input'
         onChange={updateCountry} />
         <input
         type="text"
         placeholder="Address"
         value={address}
+        className='input'
         onChange={updateAddress} />
-      <button type="submit">Create Room</button>
-      <button type="button" onClick={handleCancelClick}>Cancel</button>
+      <button className='create-form-btn' type="submit">Create Room</button>
+      <button className='create-form-btn' type="button" onClick={handleCancelClick}>Cancel</button>
     </form>
-  </section>
   </div>
   )
 }

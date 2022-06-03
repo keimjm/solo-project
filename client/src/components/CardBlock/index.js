@@ -12,7 +12,7 @@ function CardBlock({ room }) {
   return (
     <div className='card-block'>
       <img src={room.file_name}
-      alt="" />
+      alt="" /> 
         <div className='card-info'>
             <h2>{room.location.city}, {room.location.country}</h2>
             <span>{avgRating} <i className="fa-solid fa-star fa-sm"></i></span>

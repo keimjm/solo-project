@@ -63,10 +63,10 @@ function RoomDetail() {
           <h4 className='description-tag'>{room?.description}</h4>
         </div>
       {(!showEditRoom && (sessionUser?.id === room?.owner_id)) && (
-            <button onClick={() => setShowEditRoom(true)} className="edit-room" >Edit</button>
+            <button onClick={() => setShowEditRoom(true)} className="room-btn" >Edit</button>
           )}
           {(!showCreateReservation) && (
-            <button onClick={() => setShowCreateReservation(true)} className="make-reservation" >Book Room</button>
+            <button onClick={() => setShowCreateReservation(true)} className="room-btn" >Book Room</button>
           )}
           </div>
           

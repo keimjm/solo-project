@@ -22,14 +22,14 @@ function AssociatedBookings({room}) {
       <td className="centered">{reservation?.end_date}</td>
       {(reservation?.user_id === sessionUser?.id) && (
         <td className="centered">
-          <button onClick={() => console.log()}>
+          <button onClick={() => console.log()} className="booking-btn">
             Edit
           </button>
         </td>
       )}
       {(reservation?.user_id === sessionUser?.id) && (
         <td className="centered">
-          <button onClick={() => cancelBooking(reservation?.id)}>
+          <button onClick={() => cancelBooking(reservation?.id)} className="booking-btn">
             Cancel
           </button>
         </td>

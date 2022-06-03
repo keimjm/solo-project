@@ -10,3 +10,16 @@ td.centered {
   }
 
   
+  .booking-btn {
+    cursor: pointer;
+    box-shadow: 00 20px 10px lightgray;
+    border-radius: 25px;
+    display: block;
+    width: 100%;
+    margin: 15px auto;
+    padding: 10px 30px;
+    border: 0;
+    outline: none;
+    background-color: red;
+    text-align: center;
+}

@@ -4,8 +4,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
-import Dropdown from '../Dropdown';
-import CreateRoom from "../CreateRoom";
+
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
@@ -32,12 +31,13 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <li className='dropdown-item'> <ProfileButton user={sessionUser} /></li>
     );
   } else {
     sessionLinks = (
       <>
-       <Dropdown />
+        <li className='dropdown-item'><NavLink className="dropdown-link" to="/login">Log In</NavLink></li>
+        <li className='dropdown-item'><NavLink className="dropdown-link" to="/signup">Sign Up</NavLink></li>
       </>
     );
   }
@@ -67,9 +67,8 @@ function Navigation({ isLoaded }){
       </button>
       {showMenu && (
      <ul className='dropdown-list'>
-     <li className='dropdown-item'>
           {isLoaded && sessionLinks}
-        </li>
+        
       </ul>
       )}
     </div>
