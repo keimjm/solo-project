@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
@@ -9,6 +9,7 @@ import { search } from '../../store/search';
 
 function Navigation({ isLoaded }){
   const dispatch = useDispatch()
+  const history = useHistory()
   const sessionUser = useSelector(state => state.session.user);
   const [showMenu, setShowMenu] = useState(false)
   const [searchText, setSearchText] = useState("");
@@ -16,12 +17,21 @@ function Navigation({ isLoaded }){
 
   const updateSearch = (e) => setSearchText(e.target.value);
 
-  const submitSearch = (searchText) => {
-      dispatch(search(searchText))
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(searchText)
+ 
+    let rooms = await dispatch(search(searchText))
 
-  }
+    if (rooms) {
+      history.push('/search')
+      setSearchText("")
+    }
 
+    
+
+}
 
 
 
@@ -67,10 +77,10 @@ function Navigation({ isLoaded }){
        />
       </NavLink>
     <div className='nav-center'>
-      <form>
-      <input type="text" className='search-bar' placeholder='Search' value={searchText} onChange={updateSearch}/>
-     <button className='search-submit-btn' onClick={submitSearch(searchText)}> <i className="fa-solid fa-magnifying-glass"></i></button>
-      </form>
+      <form onSubmit={handleSubmit}>
+      <input type="text" className='search-bar' placeholder='Search' value={searchText} onChange={updateSearch} />
+     <button type="submit" className='search-submit-btn'> <i className="fa-solid fa-magnifying-glass"></i></button>
+     </form>
     </div>
 
     <div className='nav-right'>

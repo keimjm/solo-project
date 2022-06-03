@@ -15,8 +15,8 @@ export const search = (searchText) => async dispatch => {
     const response = await csrfFetch(`/api/search?query=${searchText}`);
 
     const data = await response.json();
-    dispatch(searchAction(data.search));
-    return data.search;
+    dispatch(searchAction(data.rooms));
+    return data.rooms;
 }
 
 

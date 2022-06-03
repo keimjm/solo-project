@@ -133,3 +133,9 @@
 .profile-dropdown > li {
     padding: 2px;
 }
+
+.search-submit-btn {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}

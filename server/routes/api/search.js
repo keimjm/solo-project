@@ -10,6 +10,8 @@ const { Room, Amenity, Location, Review, Reservation } = require('../../db/model
 router.get('/', 
     asyncHandler(async (req, res) => {
         //const {searchInput} = req.body
+
+        const query = req.url.match(/query=([^&]*)/)[1];
         const rooms = await Room.findAll({
             include: [
                 {
@@ -29,22 +31,22 @@ router.get('/',
                 [Op.or]: [
                   {
                     description: {
-                      [Op.iLike]: `%${req.query}%`
+                      [Op.iLike]: `%${query}%`
                     }
                   },
                   {
                     house_type: {
-                      [Op.iLike]: `%${req.query}%`
+                      [Op.iLike]: `%${query}%`
                     }
                   },
                   {
                     '$location.city$': {
-                      [Op.iLike]: `%${req.query}%`
+                      [Op.iLike]: `%${query}%`
                     }
                   },
                   {
                     '$location.country$': {
-                      [Op.iLike]: `%${req.query}%`
+                      [Op.iLike]: `%${query}%`
                     }
                   }
                 ]
@@ -55,3 +57,5 @@ router.get('/',
 
     })
 );
+
+module.exports = router;
