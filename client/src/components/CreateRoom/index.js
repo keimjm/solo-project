@@ -1,7 +1,7 @@
 import React, { useState} from 'react'
 import { createRoom } from '../../store/rooms';
 import { useDispatch, useSelector } from 'react-redux'
-import { Redirect, useHistory } from 'react-router-dom'
+import {useHistory } from 'react-router-dom'
 import './CreateRoom.css'
 
 

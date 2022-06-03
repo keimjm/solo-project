@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import './Reservation.css'
 import { useDispatch } from 'react-redux'
-import { Redirect } from 'react-router-dom'
 import {createReservation } from '../../store/reservation'
 
 function CreateReservation({room, user, hideCreateForm}) {

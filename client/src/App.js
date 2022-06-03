@@ -10,6 +10,7 @@ import RoomDetail from "./components/RoomDetail";
 import CreateRoom from "./components/CreateRoom";
 import SearchPage from "./components/SearchPage";
 import NotFound from "./components/NotFound";
+import Map from "./components/Map";
 
 function App() {
   const dispatch = useDispatch();
@@ -37,6 +38,9 @@ function App() {
       <Route exact path="/search" >
         <SearchPage />
       </Route  >
+      <Route exact path="/map">
+        <Map />
+      </Route>
       
       {isLoaded && (
         <>

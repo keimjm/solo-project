@@ -90,7 +90,7 @@ export const removeARoom = (id) => async dispatch => {
     }
   })
 
-  const data = await response.json();
+  await response.json();
   dispatch(removeRoom())
   return 
 }

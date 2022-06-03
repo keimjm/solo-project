@@ -72,7 +72,7 @@ function Navigation({ isLoaded }){
       <NavLink className="nav-menu-home" exact to="/">
        <img
          className='icon' 
-         src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/2560px-Airbnb_Logo_B%C3%A9lo.svg.png'
+         src='/images/craftbnb.png'
          alt=""
        />
       </NavLink>

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import FilterBar from './components/FilterBar/index'
 import './Home.css'
 import CardBlock from './components/CardBlock'
-import {loadRooms, getARoom} from './store/rooms';
+import {loadRooms} from './store/rooms';
 import { NavLink } from 'react-router-dom';
 
 function Home() {
@@ -48,6 +48,9 @@ function Home() {
         })}
         </div>
         ))}
+        <NavLink exact to="/map" className="map-link">
+            <button className='map-btn'>See Map</button>
+        </NavLink>
     </div>
   )
 }
