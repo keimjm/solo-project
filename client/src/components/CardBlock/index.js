@@ -3,8 +3,14 @@ import './CardBlock.css'
 
 function CardBlock({ room }) {
 
-  const total = room.review.reduce((acc, review) => acc + review.rating, 0);
-  const avgRating = total / room.review.length;
+  let avgRating;
+
+  if(room?.review.length > 0){
+  const total = room?.review.reduce((acc, review) => acc + review.rating, 0);
+     avgRating = total / room?.review.length;
+  } else {
+     avgRating = "No Reviews";
+  }
 
   
   
@@ -12,7 +18,7 @@ function CardBlock({ room }) {
   return (
     <div className='card-block'>
       <img src={room.file_name}
-      alt="" />
+      alt="" /> 
         <div className='card-info'>
             <h2>{room.location.city}, {room.location.country}</h2>
             <span>{avgRating} <i className="fa-solid fa-star fa-sm"></i></span>

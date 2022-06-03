@@ -21,6 +21,24 @@ asyncHandler(async function(req, res) {
 })
 )
 
+router.put("/:id", 
+asyncHandler(async(req, res) => {
+    const id = req.params.id;
+    const {user, room, start_date, end_date, total} = req.body;
+    const reservationToUpdate = await Reservation.findByPk(id)
+    const reservation = await reservationToUpdate.update({
+      start_date,
+      end_date,
+      total,
+      user_id: user.id,
+      room_id: room.id
+    })
+    return res.json({reservation})
+
+  })
+)
+
+
 
 
 module.exports = router;

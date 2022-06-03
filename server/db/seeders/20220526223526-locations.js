@@ -27,8 +27,36 @@ module.exports = {
       {
         latitude: 32.744259,
         longitude: -117.09383,
-        address: '	601 1st St',
+        address: '601 1st St',
         city: 'San Diego',
+        country: 'United States'
+      },
+      {
+        latitude: 32.744259,
+        longitude: -117.09383,
+        address: '465 Brooks Rd',
+        city: 'Honolulu',
+        country: 'United States'
+      },
+      {
+        latitude: 32.744259,
+        longitude: -117.09383,
+        address: '9121 Pax St ',
+        city: 'New Orleans',
+        country: 'United States'
+      },
+      {
+        latitude: 32.744259,
+        longitude: -117.09383,
+        address: '647 Grand Ave',
+        city: 'Lunenburg',
+        country: 'Canada'
+      },
+      {
+        latitude: 32.744259,
+        longitude: -117.09383,
+        address: '671 2nd St',
+        city: 'Chicago',
         country: 'United States'
       },
 

@@ -29,3 +29,7 @@ i.fa-brands.fa-airbnb {
     height: 100px;
     width: 60px;
 }
+
+* {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}

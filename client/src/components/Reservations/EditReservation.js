@@ -2,15 +2,16 @@ import React, {useState} from 'react'
 import './Reservation.css'
 import { useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import {createReservation } from '../../store/reservation'
+import {editReservation } from '../../store/reservation'
+import './EditReservation.css'
 
-function CreateReservation({room, user, hideCreateForm}) {
-
-
+function EditReservation({room, user, reservation, hideEditForm}) {
     const dispatch = useDispatch();
 
-    const [startDate, setStartDate] = useState("");
-    const [endDate, setEndDate] = useState("");
+    console.log(reservation)
+
+    const [startDate, setStartDate] = useState(reservation?.start_date);
+    const [endDate, setEndDate] = useState(reservation?.end_date);
 
   
     const updateStartDate = (e) => setStartDate(e.target.value);
@@ -32,23 +33,23 @@ function CreateReservation({room, user, hideCreateForm}) {
                 room,  
     };
     
-    let reservation = await dispatch(createReservation(payload, room.id));
-    if (reservation) {
+    let createdReservation = await dispatch(editReservation(payload, reservation?.id));
+    if (createdReservation) {
       window.location.reload();
-      hideCreateForm();
+      hideEditForm();
       
     }
     }
 
     const handleCancelClick = (e) => {
         e.preventDefault();
-        hideCreateForm()
+        hideEditForm()
         
       };
   return (
     <div >
-    <section className="create-reservation-form-holder centered middled">
-      <form className='create-reservation-form' onSubmit={handleSubmit}>
+    <section className="edit-reservation-form-holder centered middled">
+      <form className='edit-reservation-form' onSubmit={handleSubmit}>
         <label>Start Date</label>
         <input
         type="date"
@@ -63,7 +64,7 @@ function CreateReservation({room, user, hideCreateForm}) {
         required
         value={endDate}
         onChange={updateEndDate} />
-      <button className='book-btn' type="submit">Make Reservation</button>
+      <button className='book-btn' type="submit">Edit Reservation</button>
       <button className='book-btn' type="button" onClick={handleCancelClick}>Cancel</button>
     </form>
   </section>
@@ -71,4 +72,4 @@ function CreateReservation({room, user, hideCreateForm}) {
   )
 }
 
-export default CreateReservation;
+export default EditReservation;

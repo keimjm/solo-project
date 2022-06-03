@@ -1,15 +1,39 @@
 import React, {useState, useEffect} from 'react';
-import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { NavLink, useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
-import Dropdown from '../Dropdown';
-import CreateRoom from "../CreateRoom";
+import { search } from '../../store/search';
+
 
 function Navigation({ isLoaded }){
+  const dispatch = useDispatch()
+  const history = useHistory()
   const sessionUser = useSelector(state => state.session.user);
   const [showMenu, setShowMenu] = useState(false)
+  const [searchText, setSearchText] = useState("");
+
+
+  const updateSearch = (e) => setSearchText(e.target.value);
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(searchText)
+ 
+    let rooms = await dispatch(search(searchText))
+
+    if (rooms) {
+      history.push('/search')
+      setSearchText("")
+    }
+
+    
+
+}
+
+
 
   const openMenu = () => {
     if (showMenu) return;
@@ -32,12 +56,13 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <li className='dropdown-item'> <ProfileButton user={sessionUser} /></li>
     );
   } else {
     sessionLinks = (
       <>
-       <Dropdown />
+        <li className='dropdown-item'><NavLink className="dropdown-link" to="/login">Log In</NavLink></li>
+        <li className='dropdown-item'><NavLink className="dropdown-link" to="/signup">Sign Up</NavLink></li>
       </>
     );
   }
@@ -52,8 +77,10 @@ function Navigation({ isLoaded }){
        />
       </NavLink>
     <div className='nav-center'>
-      <input type="text" className='search-bar'/>
-      <i className="fa-solid fa-magnifying-glass"></i>
+      <form onSubmit={handleSubmit}>
+      <input type="text" className='search-bar' placeholder='Search' value={searchText} onChange={updateSearch} />
+     <button type="submit" className='search-submit-btn'> <i className="fa-solid fa-magnifying-glass"></i></button>
+     </form>
     </div>
 
     <div className='nav-right'>
@@ -67,9 +94,8 @@ function Navigation({ isLoaded }){
       </button>
       {showMenu && (
      <ul className='dropdown-list'>
-     <li className='dropdown-item'>
           {isLoaded && sessionLinks}
-        </li>
+        
       </ul>
       )}
     </div>
