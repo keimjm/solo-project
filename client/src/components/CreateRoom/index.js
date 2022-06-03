@@ -1,13 +1,15 @@
 import React, { useState} from 'react'
 import { createRoom } from '../../store/rooms';
 import { useDispatch, useSelector } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+import {useHistory } from 'react-router-dom'
 import './CreateRoom.css'
 
 
 function CreateRoom() {
     const dispatch = useDispatch();
+    const history = useHistory();
     const sessionUser = useSelector(state => state.session.user);
+    const [errors, setErrors] = useState([]);
 
     const [type, setType] = useState("");
     const [description, setDescription] = useState("");
@@ -34,7 +36,7 @@ function CreateRoom() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        setErrors([]);
             const payload = {
       description,
       total_occupancy: occupancy,
@@ -48,7 +50,10 @@ function CreateRoom() {
       address
     };
     
-    let createdRoom = await dispatch(createRoom(payload, sessionUser?.id));
+    let createdRoom = await dispatch(createRoom(payload, sessionUser?.id)).catch(async (res) => {
+      const data = await res.json();
+      if (data && data.errors) setErrors(data.errors);
+    });
     if (createdRoom) {
       
     }
@@ -56,8 +61,8 @@ function CreateRoom() {
 
     const handleCancelClick = (e) => {
         e.preventDefault();
+        history.push(`/`)
         
-        <Redirect exact to="/" />
       };
 
 
@@ -65,6 +70,9 @@ function CreateRoom() {
     <div className="create-form-holder centered middled">
     <h1>Add your Room</h1>
       <form className='create-form' onSubmit={handleSubmit}>
+      <ul>
+        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+      </ul>
         <input
         type="text"
         placeholder="House Type"

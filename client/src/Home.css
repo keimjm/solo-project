@@ -14,11 +14,30 @@
     margin-right: 30px; */
 }
 
-.room-card-link {
-
-}
 
 .room-nav-link {
     text-decoration: none;
     color: black;
 }
+
+.map-link {
+    z-index: 100;
+    position: fixed;
+    bottom: 20px;
+    right: 50%;
+    text-decoration: none;
+}
+
+.map-btn  {
+        cursor: pointer;
+        border-radius: 25px;
+        display: block;
+        width: 100%;
+        margin: 15px auto;
+        padding: 10px 30px;
+        border: 0;
+        color: white;
+        outline: none;
+        background-color: red;
+    
+    }

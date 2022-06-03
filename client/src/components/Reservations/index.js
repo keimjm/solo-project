@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import './Reservation.css'
 import { useDispatch } from 'react-redux'
-import { Redirect } from 'react-router-dom'
 import {createReservation } from '../../store/reservation'
 
 function CreateReservation({room, user, hideCreateForm}) {
@@ -11,6 +10,7 @@ function CreateReservation({room, user, hideCreateForm}) {
 
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
+    const [errors, setErrors] = useState([]);
 
   
     const updateStartDate = (e) => setStartDate(e.target.value);
@@ -18,6 +18,7 @@ function CreateReservation({room, user, hideCreateForm}) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setErrors([]);
 
        let endDay = parseInt(endDate.split("-")[2])
        let startDay = parseInt(startDate.split("-")[2])
@@ -32,7 +33,10 @@ function CreateReservation({room, user, hideCreateForm}) {
                 room,  
     };
     
-    let reservation = await dispatch(createReservation(payload, room.id));
+    let reservation = await dispatch(createReservation(payload, room.id)).catch(async (res) => {
+      const data = await res.json();
+      if (data && data.errors) setErrors(data.errors);
+    });
     if (reservation) {
       window.location.reload();
       hideCreateForm();

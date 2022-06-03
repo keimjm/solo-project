@@ -24,7 +24,7 @@ module.exports = {
         price: 70.55,
         owner_id: 3,
         location_id: 2,
-        file_name: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dx2fvHwCSGbk&psig=AOvVaw1K202YFxRjfSGAvns3cuU0&ust=1653841137180000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIj73L7MgvgCFQAAAAAdAAAAABAD"
+        file_name: "https://i.pinimg.com/originals/16/7a/ab/167aab778ba5e9b18b449a631581e373.png"
       },
       {
         house_type: 'Tiny',
@@ -56,41 +56,41 @@ module.exports = {
         total_bathrooms: 3, 
         price: 250.99,
         owner_id: 5,
+        location_id: 6,
+        file_name: 'https://momsgotthestuff.com/wp-content/uploads/2021/04/minecraft-mansion-ideas-13.jpg'
+      },
+      {
+        house_type: 'Beachfront',
+        description: "Open Beach style house right on the water",
+        total_occupancy: 4,
+        total_bedrooms: 3,
+        total_bathrooms: 3, 
+        price: 100.90,
+        owner_id: 6,
         location_id: 5,
-        file_name: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2Fohhjaybeemc%2Fstatus%2F1285577030151688192&psig=AOvVaw12EaDGR5EmDpw0ArqXWS_4&ust=1654359151942000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCPCr2KHWkfgCFQAAAAAdAAAAABAD'
+        file_name: "https://staticg.sportskeeda.com/editor/2022/02/360df-16446359460401-1920.jpg"
       },
       {
-        house_type: 'Expensive',
+        house_type: 'Camper',
         description: "A very open modern style that will allow you to relax in comfort",
         total_occupancy: 2,
         total_bedrooms: 1,
-        total_bathrooms: 2, 
-        price: 300.99,
-        owner_id: 1,
-        location_id: 4,
-        file_name: 'https://images.wondershare.com/filmora/article-images/simplistic-modern-house-poster.jpg'
+        total_bathrooms: 1, 
+        price: 40.25,
+        owner_id: 7,
+        location_id: 7,
+        file_name: 'https://i.ytimg.com/vi/0DzVcNvqVF8/maxresdefault.jpg'
       },
       {
-        house_type: 'Expensive',
+        house_type: 'City',
         description: "A very open modern style that will allow you to relax in comfort",
         total_occupancy: 2,
         total_bedrooms: 1,
-        total_bathrooms: 2, 
-        price: 300.99,
-        owner_id: 1,
-        location_id: 4,
-        file_name: 'https://images.wondershare.com/filmora/article-images/simplistic-modern-house-poster.jpg'
-      },
-      {
-        house_type: 'Expensive',
-        description: "A very open modern style that will allow you to relax in comfort",
-        total_occupancy: 2,
-        total_bedrooms: 1,
-        total_bathrooms: 2, 
-        price: 300.99,
-        owner_id: 1,
-        location_id: 4,
-        file_name: 'https://images.wondershare.com/filmora/article-images/simplistic-modern-house-poster.jpg'
+        total_bathrooms: 1, 
+        price: 80.89,
+        owner_id: 7,
+        location_id: 8,
+        file_name: 'https://whatifgaming.com/wp-content/uploads/2021/12/Minecraft-Bathroom-Interior.jpg'
       },
     
     ], {});

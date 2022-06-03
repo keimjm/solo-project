@@ -9,6 +9,8 @@ import Home from './Home.js'
 import RoomDetail from "./components/RoomDetail";
 import CreateRoom from "./components/CreateRoom";
 import SearchPage from "./components/SearchPage";
+import NotFound from "./components/NotFound";
+import Map from "./components/Map";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,29 +29,35 @@ function App() {
       >
         <Home />
       </Route>
-      <Route path="/rooms/:roomId" exact>
+      <Route exact path="/rooms/:roomId" >
         <RoomDetail />
       </Route>
-      <Route path="/rooms/" exact>
+      <Route exact path="/rooms/" >
         <CreateRoom />
       </Route>
-      <Route path="/search" exact>
+      <Route exact path="/search" >
         <SearchPage />
+      </Route  >
+      <Route exact path="/map">
+        <Map />
       </Route>
-
-    </Switch>
-     
       
       {isLoaded && (
-        <Switch>
-          <Route path="/signup">
+        <>
+          <Route exact path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/login">
+          <Route exact path="/login">
         <LoginFormPage />
       </Route>
-        </Switch>
+      <Route path="" >
+        <NotFound />
+      </Route>
+</>
       )}
+
+<Route path="" component={NotFound} />
+    </Switch>
     </div>
   );
 }
