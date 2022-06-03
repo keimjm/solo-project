@@ -124,3 +124,12 @@
     color: black;
     
 }
+
+.profile-dropdown {
+    list-style: none;
+    padding: 5px;
+}
+
+.profile-dropdown > li {
+    padding: 2px;
+}

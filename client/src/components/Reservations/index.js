@@ -49,20 +49,22 @@ function CreateReservation({room, user, hideCreateForm}) {
     <div >
     <section className="create-reservation-form-holder centered middled">
       <form className='create-reservation-form' onSubmit={handleSubmit}>
+        <label>Start Date</label>
         <input
         type="date"
         placeholder="Start Date"
         required
         value={startDate}
         onChange={updateStartDate} />
+        <label>End Date</label>
         <input
         type="date"
         placeholder="End Date"
         required
         value={endDate}
         onChange={updateEndDate} />
-      <button type="submit">Make Reservation</button>
-      <button type="button" onClick={handleCancelClick}>Cancel</button>
+      <button className='book-btn' type="submit">Make Reservation</button>
+      <button className='book-btn' type="button" onClick={handleCancelClick}>Cancel</button>
     </form>
   </section>
   </div>

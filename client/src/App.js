@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import Home from './Home.js'
 import RoomDetail from "./components/RoomDetail";
 import CreateRoom from "./components/CreateRoom";
+import SearchPage from "./components/SearchPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +32,9 @@ function App() {
       </Route>
       <Route path="/rooms/" exact>
         <CreateRoom />
+      </Route>
+      <Route path="/search" exact>
+        <SearchPage />
       </Route>
 
     </Switch>
