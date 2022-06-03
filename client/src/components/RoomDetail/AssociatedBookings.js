@@ -1,11 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './AssociatedBookings.css'
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteReservation } from '../../store/reservation';
+import { deleteReservation, editReservation } from '../../store/reservation';
+import EditReservation from '../Reservations/EditReservation';
 
-function AssociatedBookings({room}) {
+function AssociatedBookings({room, user}) {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
+    const [showEditReservation, setShowEditReservation] = useState(false)
+    const [reservation, setReservation] = useState();
 
     const cancelBooking = (id) => {
       
@@ -13,6 +16,18 @@ function AssociatedBookings({room}) {
       window.location.reload();
     }
 
+    const editBooking = (reservation) => {
+      setReservation(reservation)
+      setShowEditReservation(true)
+      
+    }
+
+    if(showEditReservation) {
+      console.log(reservation)
+      return (
+        <EditReservation room={room} user={user} reservation={reservation} hideEditForm={() => setShowEditReservation(false)} />
+      )
+    }
     
     
   return (
@@ -34,7 +49,7 @@ function AssociatedBookings({room}) {
       <td className="centered">{reservation?.total}</td>
       {(reservation?.user_id === sessionUser?.id) && (
         <td className="centered">
-          <button onClick={() => console.log()} className="booking-btn">
+          <button onClick={() => editBooking(reservation)} className="booking-btn">
             Edit
           </button>
         </td>

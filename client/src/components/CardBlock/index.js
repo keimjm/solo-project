@@ -3,8 +3,14 @@ import './CardBlock.css'
 
 function CardBlock({ room }) {
 
-  const total = room.review.reduce((acc, review) => acc + review.rating, 0);
-  const avgRating = total / room.review.length;
+  let avgRating;
+
+  if(room?.review.length > 0){
+  const total = room?.review.reduce((acc, review) => acc + review.rating, 0);
+     avgRating = total / room?.review.length;
+  } else {
+     avgRating = "No Reviews";
+  }
 
   
   

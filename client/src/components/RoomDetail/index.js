@@ -7,6 +7,7 @@ import EditRoom from './EditRoom';
 import './RoomDetail.css'
 import AssociatedBookings from './AssociatedBookings';
 import CreateReservation from '../Reservations';
+import EditReservation from '../Reservations/EditReservation';
 
 function RoomDetail() {
     const { roomId } = useParams();
@@ -23,11 +24,16 @@ function RoomDetail() {
  
 
     const room = useSelector(state => state.room.room);
+    let avgRating;
 
-
-
+    if(room?.review.length > 0){
     const total = room?.review.reduce((acc, review) => acc + review.rating, 0);
-    const avgRating = total / room?.review.length;
+       avgRating = total / room?.review.length;
+    } else {
+       avgRating = "No Reviews";
+    }
+
+    
 
       let content = null;
 
@@ -41,9 +47,9 @@ function RoomDetail() {
       content = (
         <CreateReservation key={room?.id} room={room} user={sessionUser} hideCreateForm={() => setShowCreateReservation(false)} />
       )
-    } else {
+    }  else {
       content = (
-        < AssociatedBookings key={room?.id} room={room} />
+        < AssociatedBookings key={room?.id} room={room} user={sessionUser} />
       )
     }
 

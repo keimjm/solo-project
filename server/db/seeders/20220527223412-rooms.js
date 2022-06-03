@@ -48,6 +48,50 @@ module.exports = {
         location_id: 4,
         file_name: 'https://images.wondershare.com/filmora/article-images/simplistic-modern-house-poster.jpg'
       },
+      {
+        house_type: 'Expensive',
+        description: "Featured in Architectural Digest",
+        total_occupancy: 3,
+        total_bedrooms: 3,
+        total_bathrooms: 3, 
+        price: 250.99,
+        owner_id: 5,
+        location_id: 5,
+        file_name: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2Fohhjaybeemc%2Fstatus%2F1285577030151688192&psig=AOvVaw12EaDGR5EmDpw0ArqXWS_4&ust=1654359151942000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCPCr2KHWkfgCFQAAAAAdAAAAABAD'
+      },
+      {
+        house_type: 'Expensive',
+        description: "A very open modern style that will allow you to relax in comfort",
+        total_occupancy: 2,
+        total_bedrooms: 1,
+        total_bathrooms: 2, 
+        price: 300.99,
+        owner_id: 1,
+        location_id: 4,
+        file_name: 'https://images.wondershare.com/filmora/article-images/simplistic-modern-house-poster.jpg'
+      },
+      {
+        house_type: 'Expensive',
+        description: "A very open modern style that will allow you to relax in comfort",
+        total_occupancy: 2,
+        total_bedrooms: 1,
+        total_bathrooms: 2, 
+        price: 300.99,
+        owner_id: 1,
+        location_id: 4,
+        file_name: 'https://images.wondershare.com/filmora/article-images/simplistic-modern-house-poster.jpg'
+      },
+      {
+        house_type: 'Expensive',
+        description: "A very open modern style that will allow you to relax in comfort",
+        total_occupancy: 2,
+        total_bedrooms: 1,
+        total_bathrooms: 2, 
+        price: 300.99,
+        owner_id: 1,
+        location_id: 4,
+        file_name: 'https://images.wondershare.com/filmora/article-images/simplistic-modern-house-poster.jpg'
+      },
     
     ], {});
     
