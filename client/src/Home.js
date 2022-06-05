@@ -10,7 +10,7 @@ import { NavLink } from 'react-router-dom';
 function Home() {
   const dispatch = useDispatch();
   const [filter, setFilter] = useState(false);
-  // const history = useHistory();
+  
 
   useEffect(() => {
     dispatch(loadRooms());

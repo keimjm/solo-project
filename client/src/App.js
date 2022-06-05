@@ -57,10 +57,11 @@ function App() {
       <Route path="" >
         <NotFound />
       </Route>
+      
 </>
       )}
 
-<Route path="" component={NotFound} />
+      <Route path="*" component={NotFound} />
     </Switch>
     </div>
   );

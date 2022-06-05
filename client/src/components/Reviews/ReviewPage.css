@@ -1,14 +1,24 @@
 td.centered {
     text-align: center;
     padding: 10px;
+    min-width: 50px;
   }
 
+th {
+    padding: 20px;
+}
 
-  .associated-bookings {
+
+.review-block > h2 {
+    padding: 25px;
+}
+
+  .associated-reviews {
     padding: 10px;
     margin: 15px;
+    align-items: center;
+    
   }
-
 
   
   .booking-btn {
@@ -25,12 +35,8 @@ td.centered {
     text-align: center;
 }
 
-.reservation-block {
-  width: 50%;
-  padding: 25px;
-  margin: 25px;
-}
-
-.reservation-block > h2 {
-  padding: 25px;
+.review-block {
+    width: 50%;
+    padding: 25px;
+    margin: 25px;
 }

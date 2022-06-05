@@ -31,12 +31,13 @@ function AssociatedBookings({room, user}) {
     
     
   return (
-    <div>
+    <div className='reservation-block'>
     <h2>Reservations</h2>
     
     {room?.reservation.map((reservation) => {
       return (
     <div className='associated-bookings'>
+      <table>
       <tr>
         <th>Start Date</th>
         <th> End Date</th>
@@ -63,6 +64,7 @@ function AssociatedBookings({room, user}) {
         
       )}
     </tr>
+    </table>
     </div>
   )
 })}

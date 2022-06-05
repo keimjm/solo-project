@@ -8,6 +8,7 @@ import './RoomDetail.css'
 import AssociatedBookings from './AssociatedBookings';
 import CreateReservation from '../Reservations';
 import EditReservation from '../Reservations/EditReservation';
+import ReviewPage from '../Reviews';
 
 function RoomDetail() {
     const history = useHistory();
@@ -55,7 +56,10 @@ function RoomDetail() {
       }
     }  else {
       content = (
+        <div className='lower-block'>
         < AssociatedBookings key={room?.id} room={room} user={sessionUser} />
+        <ReviewPage key={room?.review.id} room={room} user={sessionUser} />
+         </div>
       )
     }
 
