@@ -25,8 +25,7 @@ function App() {
     <Navigation isLoaded={isLoaded} />
     <Switch>
       <Route
-      path="/"
-        exact
+       exact path="/"  
       >
         <Home />
       </Route>
@@ -45,23 +44,25 @@ function App() {
       <Route exact path="/users/:userId">
         <ProfilePage />
       </Route>
+
       
       {isLoaded && (
-        <>
+        <Switch>
           <Route exact path="/signup">
             <SignupFormPage />
           </Route>
           <Route exact path="/login">
         <LoginFormPage />
-      </Route>
-      <Route path="" >
+      </Route>  
+      <Route path="*"> 
         <NotFound />
       </Route>
-      
-</>
+      </Switch>
       )}
 
-      <Route path="*" component={NotFound} />
+      <Route path="*"> 
+        <NotFound />
+      </Route>
     </Switch>
     </div>
   );

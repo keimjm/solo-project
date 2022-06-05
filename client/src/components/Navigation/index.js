@@ -26,9 +26,7 @@ function Navigation({ isLoaded }){
     if (rooms) {
       history.push('/search')
       setSearchText("")
-    }
-
-    
+    }  
 
 }
 
