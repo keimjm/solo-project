@@ -87,6 +87,55 @@ module.exports = {
         user_id: 1,
         room_id: 6
       },
+      {
+        start_date: '2022/01/17',
+        end_date: '2022/01/20',
+        total: 518.67,
+        user_id: 1,
+        room_id: 10
+      },
+      {
+        start_date: '2022/02/01',
+        end_date: '2022/02/04',
+        total: 197.07,
+        user_id: 6,
+        room_id: 9
+      },
+      {
+        start_date: '2022/04/16',
+        end_date: '2022/04/19',
+        total: 242.67,
+        user_id: 3,
+        room_id: 11
+      },
+      {
+        start_date: '2022/03/21',
+        end_date: '2022/03/25',
+        total: 143.96,
+        user_id: 3,
+        room_id: 12
+      },
+      {
+        start_date: '2022/03/05',
+        end_date: '2022/03/10',
+        total: 801.25,
+        user_id: 7,
+        room_id: 1
+      },
+      {
+        start_date: '2022/04/12',
+        end_date: '2022/04/16',
+        total: 161,
+        user_id: 5,
+        room_id: 7
+      },
+      {
+        start_date: '2022/05/01',
+        end_date: '2022/05/03',
+        total: 201.80,
+        user_id: 7,
+        room_id: 6
+      },
     ], {});
   },
 

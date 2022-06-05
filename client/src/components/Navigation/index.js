@@ -55,7 +55,7 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <li className='dropdown-item'> <ProfileButton user={sessionUser} /></li>
+      <div className='dropdown-item'> <ProfileButton user={sessionUser} /></div>
     );
   } else {
     sessionLinks = (
@@ -92,10 +92,10 @@ function Navigation({ isLoaded }){
         <i className="fa-solid fa-user "></i>
       </button>
       {showMenu && (
-     <ul className='dropdown-list'>
+     <div className='dropdown-list'>
           {isLoaded && sessionLinks}
         
-      </ul>
+      </div>
       )}
     </div>
 

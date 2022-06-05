@@ -45,13 +45,13 @@ function ProfileButton({ user }) {
       {true && (
         <ul className="profile-dropdown">
           
-          <li>{user.username}</li>
-          <li>{user.email}</li>
+          {/* <li>{user.username}</li>
+          <li>{user.email}</li> */}
           <li>
-            <button onClick={profile}>Profile</button>
+            <button className="profile-btn" onClick={profile}>Profile</button>
           </li>
           <li>
-            <button onClick={logout}>Log Out</button>
+            <button className="profile-btn" onClick={logout}>Log Out</button>
           </li>
         </ul>
       )}
