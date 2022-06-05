@@ -10,7 +10,7 @@ import { NavLink } from 'react-router-dom';
 function Home() {
   const dispatch = useDispatch();
   const [filter, setFilter] = useState(false);
-  // const history = useHistory();
+  
 
   useEffect(() => {
     dispatch(loadRooms());
@@ -19,10 +19,7 @@ function Home() {
 
 
   const rooms = useSelector(state => {
-    
-    if(state.room.rooms.length > 0){
-      return state.room.rooms    //.map(roomId => state.room.rooms[roomId])
-    }
+     if(state.room.rooms.length > 0) return state.room.rooms
   });
 
 
@@ -40,7 +37,7 @@ function Home() {
             //console.log(room)
           return (
             <div className='room-card-link'>
-             <NavLink key={room.id} to={`/rooms/${room.id}`} room={room} className="room-nav-link">
+             <NavLink   to={`/rooms/${room.id}`} room={room} className="room-nav-link">
             <CardBlock key={room.id} room={room} />
             </NavLink>
             </div>

@@ -11,6 +11,10 @@ function CreateRoom() {
     const sessionUser = useSelector(state => state.session.user);
     const [errors, setErrors] = useState([]);
 
+    if(!sessionUser) {
+      history.push("/login")
+    }
+
     const [type, setType] = useState("");
     const [description, setDescription] = useState("");
     const [occupancy, setOccupancy] = useState("");
@@ -55,7 +59,7 @@ function CreateRoom() {
       if (data && data.errors) setErrors(data.errors);
     });
     if (createdRoom) {
-      
+      history.push(`/`)
     }
     }
 

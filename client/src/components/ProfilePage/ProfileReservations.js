@@ -1,10 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import './AssociatedBookings.css'
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteReservation, editReservation } from '../../store/reservation';
 import EditReservation from '../Reservations/EditReservation';
 
-function AssociatedBookings({room, user}) {
+function ProfileReservations({room, user}) {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const [showEditReservation, setShowEditReservation] = useState(false)
@@ -31,13 +31,12 @@ function AssociatedBookings({room, user}) {
     
     
   return (
-    <div className='reservation-block'>
+    <div>
     <h2>Reservations</h2>
     
     {room?.reservation.map((reservation) => {
       return (
     <div className='associated-bookings'>
-      <table>
       <tr>
         <th>Start Date</th>
         <th> End Date</th>
@@ -47,7 +46,7 @@ function AssociatedBookings({room, user}) {
     <tr key={reservation?.id}>
       <td className="centered">{reservation?.start_date}</td>
       <td className="centered">{reservation?.end_date}</td>
-      <td className="centered">${reservation?.total}</td>
+      <td className="centered">{reservation?.total}</td>
       {(reservation?.user_id === sessionUser?.id) && (
         <td className="centered">
           <button onClick={() => editBooking(reservation)} className="booking-btn">
@@ -64,7 +63,6 @@ function AssociatedBookings({room, user}) {
         
       )}
     </tr>
-    </table>
     </div>
   )
 })}
@@ -72,4 +70,4 @@ function AssociatedBookings({room, user}) {
 )
 }
 
-export default AssociatedBookings
+export default ProfileReservations

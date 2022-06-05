@@ -92,6 +92,51 @@ module.exports = {
         location_id: 8,
         file_name: 'https://whatifgaming.com/wp-content/uploads/2021/12/Minecraft-Bathroom-Interior.jpg'
       },
+      {
+        house_type: 'Treehouse',
+        description: "Come experience a wonderful—and sustainable—kind of getaway at our retreat",
+        total_occupancy: 4,
+        total_bedrooms: 2,
+        total_bathrooms: 1, 
+        price: 65.69,
+        owner_id: 1,
+        location_id: 9,
+        file_name: 'https://whatifgaming.com/wp-content/uploads/2021/12/Jungle-Treehouse-Minecraft-Design.png'
+      },
+      {
+        house_type: 'City',
+        description: "The house is equipped with a large kitchen and two modern bathrooms",
+        total_occupancy: 3,
+        total_bedrooms: 1,
+        total_bathrooms: 2, 
+        price: 172.89,
+        owner_id: 2,
+        location_id: 10,
+        file_name: 'https://i.pinimg.com/originals/89/53/49/895349efd458955fc6f9c5813e90508a.jpg'
+      },
+      {
+        house_type: 'Lakefront',
+        description: "Relax on the water in this peaceful spot. A boat is needed to reach the house.",
+        total_occupancy: 2,
+        total_bedrooms: 1,
+        total_bathrooms: 1, 
+        price: 80.89,
+        owner_id: 6,
+        location_id: 11,
+        file_name: 'https://i.pinimg.com/736x/50/e5/22/50e522fe48cf1e40172f5be0584a463a.jpg'
+      },
+      {
+        house_type: 'Tiny',
+        description: "Very secluded spot with lots of outdoor things to do nearby",
+        total_occupancy: 2,
+        total_bedrooms: 1,
+        total_bathrooms: 0, 
+        price: 35.99,
+        owner_id: 1,
+        location_id: 12,
+        file_name: 'https://cdn.exputer.com/wp-content/uploads/2021/12/Source-1-6.png'
+      },
+      
     
     ], {});
     

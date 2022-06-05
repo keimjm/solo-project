@@ -10,8 +10,6 @@
     border: 1px solid lightgray;
     background-color: white;
     cursor: pointer;
-    /* grid-area: 'c';
-    margin-right: 25px; */
 }
 
 .icon {
@@ -29,7 +27,7 @@
     position: sticky;
     width: 100%;
     background-color: white;
-    z-index: 100;
+    z-index:99;
     top: 0;
     border-bottom: 1px solid lightgray;
     padding-bottom: 15px;
@@ -90,23 +88,24 @@
     align-items: center;
     padding: 10px;
     flex-direction: column;
-    overflow: hidden;
     position: absolute;
-    top: 58px;
-    right: 5px;
+    top: 65px;
+    right: 5px; 
     border: 0px solid black;
-    overflow: hidden;
+    width: 120px;
+    height: 60px;
+    background-color: white;
     border-radius: 10px;
-    transition: transform 100ms ease-in;
     cursor: pointer;
     margin: 10px;
     box-shadow: 10px 5px 5px 5px lightgray;
-    z-index: 100;;
+    z-index: 100;
 }
 
 .dropdown-item {
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 50px;
 }
 
@@ -128,14 +127,25 @@
 .profile-dropdown {
     list-style: none;
     padding: 5px;
+    margin-top: 35px;
 }
 
 .profile-dropdown > li {
     padding: 2px;
 }
 
+
+
 .search-submit-btn {
     border: none;
     background-color: white;
     cursor: pointer;
+}
+
+.profile-btn {
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    font-size: medium;
 }

@@ -60,7 +60,7 @@ function FilterBar() {
             </button>
             </div>
             <div className='icon-block'>
-                <button className='filter-icon-button' type= "button" aria-hidden="false" aria-pressed="true" onClick={() => filterResults("Castles")}>
+                <button className='filter-icon-button' type= "button" aria-hidden="false" aria-pressed="true" onClick={() => filterResults("Castle")}>
                   <span className='filter-icon'><i className="fa-solid fa-chess-rook"></i></span>
                   <span className='filter-name'>Castles</span>
                 </button>

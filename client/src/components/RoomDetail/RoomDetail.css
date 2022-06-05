@@ -55,3 +55,12 @@
     outline: none;
     background-color: red;
 }
+
+.lower-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 55px;
+    padding: 25px;
+}

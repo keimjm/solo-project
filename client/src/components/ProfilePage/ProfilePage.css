@@ -1,0 +1,78 @@
+
+
+.room-btn {
+    cursor: pointer;
+    box-shadow: 00 20px 10px lightgray;
+    border-radius: 25px;
+    display: block;
+    width: 80%;
+    margin: 15px auto;
+    padding: 10px 30px;
+    border: 0;
+    outline: none;
+    background-color: red;
+}
+
+
+.card-info {
+    padding: 25px;
+    border-radius: 15px;
+    border: 1;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+.card-block > img {
+    width: 100%;
+    object-fit: fill;
+    min-width: 450px;
+    min-height: 250px;
+    max-width: 350px;
+    max-height: 250px;
+
+}
+
+.card-block {
+    border: 0px solid black;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 100ms ease-in;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: 10px 5px 5px lightgray;
+}
+
+.card-block:hover {
+    transform: scale(1.05);
+}
+
+.username-block {
+    text-align: center;
+    margin-bottom: 150px;
+}
+
+.user-profile > h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.room-section {
+    margin-bottom: 150px;
+}
+
+.user-bookings > table{
+    margin: auto;
+}
+
+.user-headers {
+    margin-left: 150px;
+    border-bottom: 1px solid black;
+    padding: 5px;
+}
+
+.review-block {
+    margin: auto;
+}
+
+ th {
+    text-align: left;
+}

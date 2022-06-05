@@ -76,6 +76,48 @@ module.exports = {
         user_id: 1,
         room_id: 6
       },
+      {
+        rating: 5,
+        comment: 'Loved the design and look of this spot!',
+        user_id: 1,
+        room_id: 10
+      },
+      {
+        rating: 3,
+        comment: 'The place was very cool but felt very unsafe at times in the house.',
+        user_id: 6,
+        room_id: 9
+      },
+      {
+        rating: 2,
+        comment: 'Very inconvenient to have to row back and forth every time you want to leave.',
+        user_id: 3,
+        room_id: 11
+      },
+      {
+        rating: 5,
+        comment: '',
+        user_id: 3,
+        room_id: 12
+      },
+      {
+        rating: 4,
+        comment: 'Was a cool experience but was a little creeped out in some places.',
+        user_id: 7,
+        room_id: 1
+      },
+      {
+        rating: 3,
+        comment: '',
+        user_id: 5,
+        room_id: 7
+      },
+      {
+        rating: 5,
+        comment: 'Had a great time and this house was a big reason for that',
+        user_id: 7,
+        room_id: 5
+      },
 
       
     ], {});

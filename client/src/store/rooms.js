@@ -51,7 +51,7 @@ const createARoom = (room) => {
 
 
 export const loadRooms = () => async dispatch =>  {
-    const response = await csrfFetch('api/rooms');
+    const response = await csrfFetch('/api/rooms');
     const data = await response.json();
     //console.log(data.rooms);
     dispatch(getRooms(data.rooms));
@@ -77,17 +77,14 @@ export const editARoom = (id, payload) => async dispatch => {
   });
 
   const data = await response.json();
+  console.log(data.room)
   dispatch(editRoom(data.room))
   return data.room
 }
 
 export const removeARoom = (id) => async dispatch => {
   const response = await csrfFetch(`/api/rooms/${id}`, {
-    method: 'DELETE',
-    body: JSON.stringify(id),
-    headers: {
-      'Content-Type': "application/json"
-    }
+    method: 'DELETE'
   })
 
   await response.json();
@@ -128,7 +125,7 @@ const roomReducer = (state = initialState, action) => {
       newState = Object.assign({}, state);
       newState.room = action.room;
       return newState
-      case EDIT_ROOM:
+    case EDIT_ROOM:
         newState = Object.assign({}, state);
         newState.room = action.room;
         return newState

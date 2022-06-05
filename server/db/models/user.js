@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
   {
     defaultScope: {
       attributes: {
-        exclude: ['hashedPassword', 'email', 'createdAt', 'updatedAt']
+        exclude: ['hashedPassword', 'updatedAt']
       }
     },
     scopes: {
@@ -87,9 +87,10 @@ module.exports = (sequelize, DataTypes) => {
 
   User.associate = function(models) {
     // associations can be defined here
-    User.hasMany(models.Favorite, { foreignKey: "user_id" });
-    User.hasMany(models.Reservation, { foreignKey: "user_id"});
-    User.hasMany(models.Room, { foreignKey: "owner_id"});
+    User.hasMany(models.Favorite, { foreignKey: "user_id", onDelete: "CASCADE",hooks:true });
+    User.hasMany(models.Reservation, { foreignKey: "user_id", onDelete: "CASCADE",hooks:true, as: "reservation"});
+    User.hasMany(models.Room, { foreignKey: "owner_id", onDelete: "CASCADE",hooks:true, as: "room",});
+    User.hasMany(models.Review, { foreignKey: "user_id", onDelete: "CASCADE",hooks:true, as: "review",});
   };
 
   return User;
