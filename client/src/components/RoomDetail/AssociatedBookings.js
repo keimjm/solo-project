@@ -47,7 +47,7 @@ function AssociatedBookings({room, user}) {
     <tr key={reservation?.id}>
       <td className="centered">{reservation?.start_date}</td>
       <td className="centered">{reservation?.end_date}</td>
-      <td className="centered">{reservation?.total}</td>
+      <td className="centered">${reservation?.total}</td>
       {(reservation?.user_id === sessionUser?.id) && (
         <td className="centered">
           <button onClick={() => editBooking(reservation)} className="booking-btn">

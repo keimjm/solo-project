@@ -22,7 +22,7 @@ function ReviewPage({room, user}) {
     <tr key={review?.id}>
       <td className="centered">{review?.rating} <i className="fa-solid fa-star fa-sm"></i></td>
       <td className="centered">{review?.comment}</td>
-      {(review?.user_id === sessionUser?.id) && (
+      {/* {(review?.user_id === sessionUser?.id) && (
         <td className="centered">
           <button onClick={() => console.log()} className="booking-btn">
             Edit
@@ -34,9 +34,9 @@ function ReviewPage({room, user}) {
           <button onClick={() => console.log()} className="booking-btn">
             Cancel
           </button>
-        </td>
+        </td> 
         
-      )}
+      )}*/}
     </tr>
     </table>
     </div>

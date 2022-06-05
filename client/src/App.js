@@ -7,7 +7,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Home from './Home.js'
 import RoomDetail from "./components/RoomDetail";
-import ProfilePage from "./ProfilePage";
+import ProfilePage from "./components/ProfilePage";
 import CreateRoom from "./components/CreateRoom";
 import SearchPage from "./components/SearchPage";
 import NotFound from "./components/NotFound";

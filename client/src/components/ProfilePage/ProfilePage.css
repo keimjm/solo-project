@@ -1,47 +1,4 @@
-.room-info {
-    padding: 25px;
-    border-radius: 15px;
-    border: 1;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-}
 
-.room-block > img {
-    width: 100%;
-    object-fit: fill;
-    min-width: 350px;
-    min-height: 250px;
-    max-width: 350px;
-    max-height: 350px;
-
-}
-
-.room-block {
-    border: 0px solid black;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    align-items: center;
-    transition: transform 100ms ease-in;
-    cursor: pointer;
-    box-shadow: 10px 5px 5px lightgray;
-    margin-right: 30px;
-    margin-left: 30px;
-    width: auto;
-
-}
-
-.card-block:hover {
-    transform: scale(1.05);
-}
-
-.edit-room {
-    margin: 30px;
-}   
-
-.description-tag {
-    margin: 30px;
-}
 
 .room-btn {
     cursor: pointer;
@@ -86,4 +43,36 @@
 
 .card-block:hover {
     transform: scale(1.05);
+}
+
+.username-block {
+    text-align: center;
+    margin-bottom: 150px;
+}
+
+.user-profile > h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.room-section {
+    margin-bottom: 150px;
+}
+
+.user-bookings > table{
+    margin: auto;
+}
+
+.user-headers {
+    margin-left: 150px;
+    border-bottom: 1px solid black;
+    padding: 5px;
+}
+
+.review-block {
+    margin: auto;
+}
+
+ th {
+    text-align: left;
 }
