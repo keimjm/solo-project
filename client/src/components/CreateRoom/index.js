@@ -59,7 +59,7 @@ function CreateRoom() {
       if (data && data.errors) setErrors(data.errors);
     });
     if (createdRoom) {
-      
+      history.push(`/`)
     }
     }
 

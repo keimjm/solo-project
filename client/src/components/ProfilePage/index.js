@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import CardBlock from '../CardBlock'
 import {loadRooms} from '../../store/rooms';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import './ProfilePage.css'
 import AssociatedBookings from '../RoomDetail/AssociatedBookings';
 import { getUser } from '../../store/user';
@@ -11,21 +11,21 @@ import { deleteReservation} from '../../store/reservation'
 function ProfilePage() {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
+    const history = useHistory();
 
     useEffect(() => {
-      console.log(sessionUser)
+      dispatch(loadRooms())
 
-     dispatch(getUser(sessionUser?.id));
-    }, [sessionUser])
+      dispatch(getUser(sessionUser?.id))
+      
+    }, [dispatch])
 
+    useEffect(() => {
+      dispatch(getUser(sessionUser?.id))
+      
+    }, [dispatch, sessionUser])
 
-    const viewBooking = (id) => {
-
-      dispatch(deleteReservation(id))
-      window.location.reload();
-    }
-
-    const user = useSelector(state => state.user.user);
+    const user = useSelector(state => state.user.user)
     const member = new Date(user?.createdAt)
     const date = member.getDate();
     const month = member.getMonth(); 
@@ -38,6 +38,15 @@ function ProfilePage() {
 
       const rooms = stateRooms?.filter(room => room.owner_id === user?.id)
 
+      const viewBooking = (id) => {
+        const room = stateRooms?.find(room => room.reservation.find(reservation => reservation.id === id))
+        
+        history.push(`/rooms/${room.id}`)
+      }
+
+      if(!rooms) {
+        return null;
+      }
 
   return (
     <div className='user-profile'>
@@ -76,7 +85,7 @@ function ProfilePage() {
       <td className="centered">{reservation?.start_date}</td>
       <td className="centered">{reservation?.end_date}</td>
       <td className="centered">${reservation?.total}</td>
-      {(reservation?.user_id === sessionUser?.id) && (
+      {(reservation?.user_id === user?.id) && (
         <td className="centered">
           <button onClick={() => viewBooking(reservation?.id)} className="booking-btn">
             View Booking

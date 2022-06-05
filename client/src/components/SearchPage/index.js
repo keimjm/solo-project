@@ -1,4 +1,4 @@
-import React, {useState,} from 'react';
+import React, {useState} from 'react';
 import { useSelector } from 'react-redux';
 import CardBlock from '../CardBlock/index'
 import { NavLink } from 'react-router-dom';
@@ -7,7 +7,13 @@ import './SearchPage.css'
 function SearchPage() {
     const rooms = useSelector(state => state.search.search)
 
-    console.log(rooms)
+    if(rooms?.length === 0){
+      return (
+        <div className='no-results'>
+          <h4>Sorry, no posts match that search. Try another one</h4>
+        </div>
+      )
+    }
 
   return (
     <div className='search-page'>

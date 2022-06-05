@@ -22,10 +22,10 @@ function RoomDetail() {
     
     useEffect(() => {
         dispatch(getARoom(roomId));
-      }, [roomId]);
+      }, [dispatch]);
  
 
-    const room = useSelector(state => state.room.room);
+    const room = useSelector(state => state.room?.room);
     let avgRating;
 
     if(room?.review.length > 0){

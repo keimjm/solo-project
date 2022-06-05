@@ -19,3 +19,8 @@
     text-decoration: none;
     color: black;
 }
+
+.no-results > h4 {
+    padding: 30px;
+    text-align: center;
+}

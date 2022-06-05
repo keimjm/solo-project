@@ -20,7 +20,6 @@ function Navigation({ isLoaded }){
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(searchText)
  
     let rooms = await dispatch(search(searchText))
 
