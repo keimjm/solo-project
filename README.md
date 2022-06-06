@@ -20,7 +20,7 @@ Here is the [link](https://github.com/keimjm/solo-project/wiki/API-Routes) to th
 
 **Home View:**
 
-![https://github.com/keimjm/solo-project/tree/main/client/public/images/HomePage.png]
+![alttext](https://github.com/keimjm/solo-project/tree/main/client/public/images/HomePage.png)
 
 **Profile Page:**
 
