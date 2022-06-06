@@ -1,4 +1,5 @@
 import React, { useState} from 'react'
+import Geocode from "react-geocode";
 import { createRoom } from '../../store/rooms';
 import { useDispatch, useSelector } from 'react-redux'
 import {useHistory } from 'react-router-dom'
@@ -10,6 +11,8 @@ function CreateRoom() {
     const history = useHistory();
     const sessionUser = useSelector(state => state.session.user);
     const [errors, setErrors] = useState([]);
+
+    
 
     if(!sessionUser) {
       history.push("/login")
@@ -41,6 +44,20 @@ function CreateRoom() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setErrors([]);
+
+        Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY)
+
+        //const location = Geocode.fromAddress(`${city}`)
+        // .then(
+        //   (response) => {
+        //     const { lat, lng } = response.results[0].geometry.location;
+        //     console.log(lat, lng)
+        //   },
+        //   (error) => {
+        //     console.error(error);
+        //   }
+        // );
+        
 
             const payload = {
       description,
