@@ -23,6 +23,11 @@ function CreateReservation({room, user, hideCreateForm}) {
        let endDay = parseInt(endDate.split("-")[2])
        let startDay = parseInt(startDate.split("-")[2])
 
+       if(endDay < startDay) {
+         setErrors(["Start Date must be before End Date"]);
+         return 
+       }
+
         const total = (room.price * (endDay - startDay)).toFixed(2)
 
             const payload = {
@@ -37,6 +42,8 @@ function CreateReservation({room, user, hideCreateForm}) {
       const data = await res.json();
       if (data && data.errors) setErrors(data.errors);
     });
+
+
     if (reservation) {
       window.location.reload();
       hideCreateForm();
@@ -53,6 +60,9 @@ function CreateReservation({room, user, hideCreateForm}) {
     <div >
     <section className="create-reservation-form-holder centered middled">
       <form className='create-reservation-form' onSubmit={handleSubmit}>
+      <ul>
+        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+      </ul>
         <label>Start Date</label>
         <input
         type="date"
