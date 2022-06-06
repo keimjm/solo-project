@@ -20,15 +20,15 @@ Here is the [link](https://github.com/keimjm/solo-project/wiki/API-Routes) to th
 
 **Home View:**
 
-![alttext](https://github.com/keimjm/solo-project/tree/main/client/public/images/HomePage.png)
+![alt text](https://github.com/keimjm/solo-project/tree/main/client/public/images/HomePage.png)
 
 **Profile Page:**
 
-![https://github.com/keimjm/solo-project/tree/main/client/public/images/ProfilePage.png]
+![alt text](https://github.com/keimjm/solo-project/tree/main/client/public/images/ProfilePage.png)
 
 **Map Page:**
 
-![https://github.com/keimjm/solo-project/tree/main/client/public/images/Map.png]
+![alt text](https://github.com/keimjm/solo-project/tree/main/client/public/images/Map.png)
 
 ## Features
 
@@ -109,4 +109,4 @@ Here is a list of the components that were used in the frontend react.
 
 The image below is the redux store state for getting the rooms and reservations associated with a user. I used Redux to update information and get information from the database.
 
-![https://github.com/keimjm/solo-project/tree/main/client/public/images/ReduxStore.png]
+![alt text](https://github.com/keimjm/solo-project/tree/main/client/public/images/ReduxStore.png)
