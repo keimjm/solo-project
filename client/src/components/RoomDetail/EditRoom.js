@@ -98,42 +98,49 @@ function EditRoom({ room, hideForm }) {
         type="number"
         placeholder="Bedrooms"
         value={bedrooms}
+        required
         className='input'
         onChange={updateBedrooms} />
         <input
         type="number"
         placeholder="Bathrooms"
         value={bathrooms}
+        required
         className='input'
         onChange={updateBathrooms} />
         <input
         type="number"
         placeholder="Price"
         value={price}
+        required
         className='input'
         onChange={updatePrice} />
         <input
         type="text"
         placeholder="Image"
         value={image}
+        required
         className='input'
         onChange={updateImage} />
         <input
         type="text"
         placeholder="City"
         value={city}
+        required
         className='input'
         onChange={updateCity} />
         <input
         type="text"
         placeholder="Country"
         value={country}
+        required
         className='input'
         onChange={updateCountry} />
         <input
         type="text"
         placeholder="Address"
         value={address}
+        required
         className='input'
         onChange={updateAddress} />
       <button className='edit-form-btn' type="submit">Update Room</button>

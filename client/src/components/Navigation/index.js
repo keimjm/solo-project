@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
-import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
 import { search } from '../../store/search';
 
@@ -67,11 +66,7 @@ function Navigation({ isLoaded }){
   return (
     <div className="navigation">
       <NavLink className="nav-menu-home" exact to="/">
-       <img
-         className='icon' 
-         src='/images/craftbnb.png'
-         alt=""
-       />
+       <span className='icon'><i className="fa-solid fa-cube"></i>craftbnb</span>
       </NavLink>
     <div className='nav-center'>
       <form onSubmit={handleSubmit}>
@@ -84,7 +79,6 @@ function Navigation({ isLoaded }){
     <NavLink exact to={`/rooms`}>
     <button className='create-room-button'>Become a Host</button>
     </NavLink>
-      <i className="fa-solid fa-globe"></i>
       <button className="nav-menu-profile" onClick={openMenu}>
         <i className="fa-solid fa-grip-lines fa-sm"></i>
         <i className="fa-solid fa-user "></i>

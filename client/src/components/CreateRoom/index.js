@@ -41,6 +41,7 @@ function CreateRoom() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setErrors([]);
+
             const payload = {
       description,
       total_occupancy: occupancy,
@@ -105,6 +106,7 @@ function CreateRoom() {
         placeholder="Bedrooms"
         value={bedrooms}
         min="0"
+        required
         className='input'
         onChange={updateBedrooms} />
         <input
@@ -112,6 +114,7 @@ function CreateRoom() {
         placeholder="Bathrooms"
         value={bathrooms}
         min="0"
+        required
         className='input'
         onChange={updateBathrooms} />
         <input
@@ -119,30 +122,35 @@ function CreateRoom() {
         placeholder="Price"
         value={price}
         min="0"
+        required
         className='input'
         onChange={updatePrice} />
         <input
         type="text"
         placeholder="Image"
         value={image}
+        required
         className='input'
         onChange={updateImage} />
         <input
         type="text"
         placeholder="City"
         value={city}
+        required
         className='input'
         onChange={updateCity} />
         <input
         type="text"
         placeholder="Country"
         value={country}
+        required
         className='input'
         onChange={updateCountry} />
         <input
         type="text"
         placeholder="Address"
         value={address}
+        required
         className='input'
         onChange={updateAddress} />
       <button className='create-form-btn' type="submit">Create Room</button>

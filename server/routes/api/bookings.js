@@ -5,14 +5,6 @@ const { handleValidationErrors } = require('../../utils/validation');
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
 const { Reservation, Room, Location, Review } = require('../../db/models');
 
-router.get("/", 
-asyncHandler(async(req, res) => {
-    const id = req.params.id;
-    // const booking = await Reservation.findAll({
-    //     where: 
-    // }) 
-}));
-
 router.delete("/:id", 
 asyncHandler(async function(req, res) {
   const id = req.params.id;

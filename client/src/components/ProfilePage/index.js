@@ -4,9 +4,7 @@ import CardBlock from '../CardBlock'
 import {loadRooms} from '../../store/rooms';
 import { NavLink, useHistory } from 'react-router-dom';
 import './ProfilePage.css'
-import AssociatedBookings from '../RoomDetail/AssociatedBookings';
 import { getUser } from '../../store/user';
-import { deleteReservation} from '../../store/reservation'
 
 function ProfilePage() {
     const sessionUser = useSelector(state => state.session.user);
@@ -99,7 +97,7 @@ function ProfilePage() {
   )
 })}
         </div>
-        <h2 className='user-headers'>Reviews</h2>
+        <h2 className='user-headers'>Your Reviews</h2>
     <div className='review-block'>
     {user?.review.map((review) => {
       return (

@@ -23,7 +23,7 @@ function CreateReservation({room, user, hideCreateForm}) {
        let endDay = parseInt(endDate.split("-")[2])
        let startDay = parseInt(startDate.split("-")[2])
 
-        const total = room.price * (endDay - startDay)
+        const total = (room.price * (endDay - startDay)).toFixed(2)
 
             const payload = {
                 end_date: endDate,

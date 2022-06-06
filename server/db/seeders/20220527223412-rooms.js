@@ -123,7 +123,7 @@ module.exports = {
         price: 80.89,
         owner_id: 6,
         location_id: 11,
-        file_name: 'https://i.pinimg.com/736x/50/e5/22/50e522fe48cf1e40172f5be0584a463a.jpg'
+        file_name: 'https://i.pinimg.com/736x/7e/34/bd/7e34bdf1f2c8d8e825a0dad322997aee.jpg'
       },
       {
         house_type: 'Tiny',

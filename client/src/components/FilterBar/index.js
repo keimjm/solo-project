@@ -36,9 +36,9 @@ function FilterBar() {
             </button>
             </div>
             <div className='icon-block'>
-            <button className='filter-icon-button' type= "button" aria-hidden="false" aria-pressed="true" onClick={() => filterResults("Camping")}>
-                <span className='filter-icon'><i className="fa-solid fa-campground"></i></span>
-                <span className='filter-name'>Camping</span>
+            <button className='filter-icon-button' type= "button" aria-hidden="false" aria-pressed="true" onClick={() => filterResults("Treehouse")}>
+                <span className='filter-icon'><i className="fa-solid fa-tree"></i></span>
+                <span className='filter-name'>Treehouse</span>
             </button>
             </div>
             <div className='icon-block'>
