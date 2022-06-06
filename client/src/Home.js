@@ -34,7 +34,6 @@ function Home() {
 
        {(!filter && ( <div className='room-section'>
           {rooms.map((room) => {
-            //console.log(room)
           return (
             <div className='room-card-link'>
              <NavLink   to={`/rooms/${room.id}`} room={room} className="room-nav-link">

@@ -23,7 +23,6 @@ function AssociatedBookings({room, user}) {
     }
 
     if(showEditReservation) {
-      console.log(reservation)
       return (
         <EditReservation room={room} user={user} reservation={reservation} hideEditForm={() => setShowEditReservation(false)} />
       )

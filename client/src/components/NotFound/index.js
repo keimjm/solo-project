@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import './NotFound.css'
 
 function NotFound() {
+
   return (
     <div className='error-block'>
         <h1 className='header-404'>404 - Page Not Found!</h1>

@@ -1,0 +1,68 @@
+.toggle-btn {
+    position: relative;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+
+.link-box {
+    position: relative;
+    width: 220px;
+    margin: 35px auto;
+    border-radius: 30px;
+    box-shadow: 0 0 20px 10px lightgray;
+    text-align: center;
+
+}
+
+.login-form {
+    width: 280px;
+    transition: .5s;
+    position: relative;
+    top: 180px;
+    margin: auto;
+}
+
+.input {
+    width: 100%;
+    background: transparent;
+    margin: 5px 0;
+    padding: 10px 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid gray;
+    outline: none;
+}
+
+.login-container {
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 6% auto;
+}
+
+.login-submit {
+    cursor: pointer;
+    box-shadow: 00 20px 10px lightgray;
+    border-radius: 25px;
+    display: block;
+    width: 80%;
+    margin: 15px auto;
+    padding: 10px 30px;
+    border: 0;
+    outline: none;
+    background-color: red;
+
+}
+
+#visual-btn {
+
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    border-radius: 25px;
+    transition: .5s;
+}

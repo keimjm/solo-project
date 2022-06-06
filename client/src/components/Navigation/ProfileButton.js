@@ -9,11 +9,7 @@ function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const history = useHistory()
   const [showMenu, setShowMenu] = useState(false);
-  
-  const openMenu = () => {
-    if (showMenu) return;
-    setShowMenu(true);
-  };
+
   
   useEffect(() => {
     if (!showMenu) return;
@@ -35,18 +31,13 @@ function ProfileButton({ user }) {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
+    history.push(`/`)
   };
 
   return (
     <>
-      {/* <button onClick={openMenu}>
-      <i className="fa-solid fa-user"></i>
-      </button> */}
       {true && (
         <ul className="profile-dropdown">
-          
-          {/* <li>{user.username}</li>
-          <li>{user.email}</li> */}
           <li>
             <button className="profile-btn" onClick={profile}>Profile</button>
           </li>
