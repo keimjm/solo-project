@@ -4,11 +4,17 @@ import { useSelector, useDispatch } from 'react-redux';
 import { deleteReservation, editReservation } from '../../store/reservation';
 import EditReservation from '../Reservations/EditReservation';
 
+
 function AssociatedBookings({room, user}) {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const [showEditReservation, setShowEditReservation] = useState(false)
     const [reservation, setReservation] = useState();
+
+  const isAfter = (date) => {
+    const today = new Date();
+    return today > date 
+  }
 
     const cancelBooking = (id) => {
       
@@ -19,6 +25,9 @@ function AssociatedBookings({room, user}) {
     const editBooking = (reservation) => {
       setReservation(reservation)
       setShowEditReservation(true)
+    }
+
+    const leaveReview = () => {
       
     }
 
@@ -47,21 +56,27 @@ function AssociatedBookings({room, user}) {
       <td className="centered">{reservation?.start_date}</td>
       <td className="centered">{reservation?.end_date}</td>
       <td className="centered">${reservation?.total}</td>
-      {(reservation?.user_id === sessionUser?.id) && (
+      {((reservation?.user_id === sessionUser?.id) && isAfter(reservation?.start_date)) && (
         <td className="centered">
           <button onClick={() => editBooking(reservation)} className="booking-btn">
             Edit
           </button>
         </td>
       )}
-      {(reservation?.user_id === sessionUser?.id) && (
+      {((reservation?.user_id === sessionUser?.id) && isAfter(reservation?.start_date)) && (
         <td className="centered">
           <button onClick={() => cancelBooking(reservation?.id)} className="booking-btn">
             Cancel
           </button>
         </td>
-        
       )}
+            {/* {((reservation?.user_id === sessionUser?.id) && !isAfter(reservation?.start_date)) && (
+        <td className="centered">
+          <button onClick={() => leaveReview(reservation?.id)} className="booking-btn">
+            Leave A Review
+          </button>
+        </td>
+      )} */}
     </tr>
     </table>
     </div>

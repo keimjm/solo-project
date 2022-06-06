@@ -53,14 +53,13 @@ const createARoom = (room) => {
 export const loadRooms = () => async dispatch =>  {
     const response = await csrfFetch('/api/rooms');
     const data = await response.json();
-    //console.log(data.rooms);
+
     dispatch(getRooms(data.rooms));
     return data.rooms;
 };
 
 export const getARoom = (id) => async dispatch => {
   const response = await csrfFetch(`/api/rooms/${id}`);
-  //console.log(url)
   const data = await response.json();
 
   dispatch(getOneRoom(data.room));
@@ -77,7 +76,6 @@ export const editARoom = (id, payload) => async dispatch => {
   });
 
   const data = await response.json();
-  console.log(data.room)
   dispatch(editRoom(data.room))
   return data.room
 }
