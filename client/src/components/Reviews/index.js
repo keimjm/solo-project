@@ -28,15 +28,7 @@ function ReviewPage({room, user}) {
             Edit
           </button>
         </td>
-      )}
-      {(review?.user_id === sessionUser?.id) && (
-        <td className="centered">
-          <button onClick={() => console.log()} className="booking-btn">
-            Cancel
-          </button>
-        </td> 
-        
-      )}*/}
+      )} */}
     </tr>
     </table>
     </div>

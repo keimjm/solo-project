@@ -32,7 +32,7 @@ function Map() {
 
   return (
     <div id="map">
-        <GoogleMap zoom={10} center={center} mapContainerClassName="map-container">
+        <GoogleMap zoom={8} center={center} mapContainerClassName="map-container">
             {rooms.map(room => {
                 return (
                  <Marker position={{ lat: room?.location.latitude, lng: room?.location.longitude}} onClick={() => sendToRoom(room?.id)} />
