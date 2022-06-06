@@ -13,7 +13,8 @@ function AssociatedBookings({room, user}) {
 
   const isAfter = (date) => {
     const today = new Date();
-    return today > date 
+    const startDate = new Date(date)
+    return today < startDate 
   }
 
     const cancelBooking = (id) => {
