@@ -1,11 +1,13 @@
 .room-info {
     padding: 25px;
     border-radius: 15px;
-    border: 1;
+    margin: 15px;
+    float: right;
+    border: 1px solid gray;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
 
-.room-block > img {
+.info-image > img {
     width: 100%;
     object-fit: fill;
     min-width: 350px;
@@ -15,8 +17,19 @@
 
 }
 
+.listed-images {
+    display: flex;
+    flex-direction: column;
+}
+
+.images-field {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
 .room-block {
-    border: 0px solid black;
+    /* border: 0px solid black;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -24,15 +37,39 @@
     align-items: center;
     transition: transform 100ms ease-in;
     cursor: pointer;
-    box-shadow: 10px 5px 5px lightgray;
-    margin-right: 30px;
-    margin-left: 30px;
-    width: auto;
-
+    box-shadow: 10px 5px 5px 5px lightgray;
+    margin-right: 40px;
+    margin-left: 40px;
+    width: auto; */
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        gap: 20px;
 }
 
 .card-block:hover {
     transform: scale(1.05);
+}
+
+.center-image {
+    width: 100%;
+    min-width: 300px;
+    height: auto;
+    margin: auto;
+}
+
+.brew-details-block {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    width: 33%;
+    min-width: 200px;
+
 }
 
 .edit-room {
@@ -63,4 +100,8 @@
     flex-direction: column;
     margin-top: 55px;
     padding: 25px;
+}
+
+.other-info {
+    float: right;
 }
