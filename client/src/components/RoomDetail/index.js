@@ -27,8 +27,10 @@ function RoomDetail() {
 
     const room = useSelector(state => state.room?.room);
     const userId = room?.owner_id
-    const reviews = room?.reviews
+    const reviews = room?.review
     let avgRating;
+
+    console.log(room)
 
     if(room?.review.length > 0){
     const total = room?.review.reduce((acc, review) => acc + review.rating, 0);
@@ -74,14 +76,14 @@ function RoomDetail() {
           <p className="material-symbols-outlined">star</p>
           {sessionUser?.id !== userId &&
           <p className='booking__display-rating-text'>
-            {/* {rating ?
-              <p>{rating} &#8226;</p> :
-              <p onClick={() => setFirstReview(true)}
+            {avgRating ?
+              <p>{avgRating} &#8226;</p> :
+              <p onClick={() => console.log()}
                 className='rating__first-text'
               >
                 Be the first to leave a review
               </p>
-            } */}
+            }
           </p>
           }
           {sessionUser?.id === userId && !reviews?.length &&
@@ -99,6 +101,36 @@ function RoomDetail() {
           <h4 className='booking__display-header-location header-subtitle'>{room?.location?.city}, {room?.location?.country}</h4>
         </div>
       </div>
+
+      <div className='room-photo'>
+        <div className='info-image'>
+        <img src={room?.file_name}
+         alt="" className='room-image'/>
+        </div>
+      </div>
+
+      <div className='room-description-booking'>
+          <div className='room-desc'>
+            <div className='room-desc-header'>
+              <div className='left'>
+                <h2>Private Room by Rachael</h2>
+                <span>{room?.total_occupancy} guests &#8226; {room?.total_bedrooms} bedrooms &#8226; {room?.total_bathrooms} baths</span>
+              </div>
+              <div className='right'>
+                  <div>
+                    <div className='profile-pic'>R</div>
+                  </div>
+              </div>
+            </div>
+            <div className='room-desc-separator'></div>
+          </div>
+          <form className='room-booking'>
+            <span></span>
+            <ul></ul>
+            <div></div>
+          </form>
+      </div>
+
       </div>
 
 

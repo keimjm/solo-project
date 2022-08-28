@@ -27,6 +27,6 @@
     text-align: center;
 }
 
- p {
+ .error-message {
     margin: 20px;
 }
