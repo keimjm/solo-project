@@ -7,6 +7,12 @@
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
 
+/* .room-page {
+    width: 80%;
+    padding-top: 100px;
+    margin: auto;
+} */
+
 .info-image > img {
     width: 100%;
     object-fit: fill;
@@ -16,6 +22,52 @@
     max-height: 350px;
 
 }
+
+.title {
+    font-size: 1.75em;
+    font-weight: 600;
+    margin-top: 1em;
+}
+
+  
+  .room-rating-display {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: .85em;
+  }
+  
+  .room-rating-display > p {
+    margin-right: .25em;
+  }
+  
+  .booking__display-rating-amount {
+    font-weight: 500;
+    text-decoration: underline;
+  }
+  
+  .booking__display-rating-text {
+    font-weight: 500;
+  }
+  
+  .listing__desc-bookingcard {
+    display: grid;
+    line-height: 1.5em;
+    grid-template-columns: 3fr 1fr;
+  }
+  
+  .rating__first-text {
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: 0.2s;
+    padding: .25em;
+    border-radius: .15em;
+  }
+  
+  .rating__first-text:hover {
+    background-color: rgb(235, 235, 235);
+  }
 
 .listed-images {
     display: flex;
